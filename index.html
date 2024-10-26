@@ -3,13 +3,13 @@
 .layout-wrapper { gap: 20px; display: flex; }
 .sidebar { display: flex; flex-direction: column; line-height: normal; width: 16%; margin-left: 0; }
 .profile-section { display: flex; width: 100%; flex-direction: column; align-self: stretch; align-items: start; margin: auto 0; }
-.profile-image { aspect-ratio: 1; object-fit: contain; object-position: top; width: 146px; border-radius: 500px; align-self: center; max-width: 100%; }
+.profile-image { aspect-ratio: 1; object-fit: contain; object-position: center; width: 146px; border-radius: 500px; align-self: center; max-width: 100%; }
 .profile-name { color: #fff; align-self: center; margin-top: 43px; font: 500 24px Inter, sans-serif; }
 .social-links { align-self: stretch; display: flex; margin-top: 35px; gap: 20px; justify-content: space-between; }
-.social-icon { aspect-ratio: 1.02; object-fit: contain; object-position: top; width: 51px; }
+.social-icon { aspect-ratio: 1.02; object-fit: contain; object-position: center; width: 51px; }
 .nav-item { display: flex; margin-top: 46px; gap: 12px; color: #fff; white-space: nowrap; font: 500 16px Inter, sans-serif; }
 .nav-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 24px; }
-.scroll-indicator { aspect-ratio: 0.46; object-fit: contain; object-position: center; width: 39px; border-radius: 0; align-self: center; margin-top: 59px; }
+.scroll-indicator { aspect-ratio: 0.46; object-fit: contain; object-position: center; width: 39px; align-self: center; margin-top: 59px; }
 .main-content { display: flex; flex-direction: column; line-height: normal; width: 84%; margin-left: 20px; }
 .content-wrapper { display: flex; flex-direction: column; position: relative; min-height: 1000px; flex-grow: 1; align-items: end; padding: 20px 80px 941px; }
 .background-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: contain; object-position: top; }
@@ -28,10 +28,10 @@
 }
 </style>
 
-<nav class="profile-container">
+<div class="profile-container">
   <div class="layout-wrapper">
-    <aside class="sidebar">
-      <div class="profile-section">
+    <nav class="sidebar">
+      <section class="profile-section">
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1861366485886e7efeec29e747ffcd0df208f00cea2ac664c14bd15c9776c393?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Profile photo of Afshin Tavakkoli" class="profile-image" />
         <h1 class="profile-name">Afshin Tavakkoli</h1>
         <div class="social-links">
@@ -65,13 +65,13 @@
           <span>Contacts</span>
         </a>
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e8cca2adf55b633bb4fc17ef6fa6229a02b95e0603159cf3cc8b6e612531932?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="scroll-indicator" />
-      </div>
-    </aside>
+      </section>
+    </nav>
     <main class="main-content">
-      <div class="content-wrapper">
+      <section class="content-wrapper">
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b03cd792865f41aa346abd18b13313799dd3c6dd5551e0cb7563914cbb93458?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Background decoration" class="background-image" />
         <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/063f43b6506e6caca9b1b7bf32e3e6bf5fa91b9bcc829b4239e0c89334e5ab1b?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Logo" class="logo" />
-      </div>
+      </section>
     </main>
   </div>
-</nav>
+</div>
