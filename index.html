@@ -1,130 +1,80 @@
 <style>
-.hero-container {
-  background-color: #000;
-  padding: 39px 0 0 39px;
-  overflow: hidden;
-}
-
-.hero-layout {
-  display: flex;
-  gap: 20px;
-}
-
-.logo-column {
-  display: flex;
-  flex-direction: column;
-  width: 17%;
-}
-
-.logo-wrapper {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.content-column {
-  display: flex;
-  flex-direction: column;
-  width: 83%;
-  margin-left: 20px;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 650px;
-  flex-grow: 1;
-  align-items: flex-end;
-  max-width: 1147px;
-  padding: 20px 80px 941px;
-}
-
-.background-image {
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  object-position: top;
-}
-
-.overlay-image {
-  aspect-ratio: 3.36;
-  object-fit: contain;
-  object-position: center;
-  width: 131px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
-  max-width: 100%;
-}
+.profile-container { background-color: #000; padding: 39px 0 0 39px; overflow: hidden; }
+.profile-layout { gap: 20px; display: flex; }
+.sidebar { display: flex; flex-direction: column; line-height: normal; width: 16%; }
+.profile-card { display: flex; flex-direction: column; align-items: start; width: 100%; margin: -2px 0 auto; }
+.profile-image { aspect-ratio: 1; object-fit: contain; width: 146px; border-radius: 500px; align-self: center; margin: -3px 0 0 8px; }
+.profile-name { color: #fff; align-self: center; margin-top: 43px; font: 500 24px Inter, sans-serif; }
+.social-links { align-self: stretch; display: flex; margin-top: 35px; gap: 20px; justify-content: space-between; }
+.social-icon { aspect-ratio: 1.02; object-fit: contain; width: 51px; }
+.nav-item { display: flex; margin-top: 46px; gap: 12px; color: #fff; font: 500 16px Inter, sans-serif; }
+.nav-icon { aspect-ratio: 1; object-fit: contain; width: 24px; }
+.nav-icon-cert { aspect-ratio: 1.14; object-fit: contain; width: 24px; align-self: start; }
+.nav-icon-contact { aspect-ratio: 1.04; object-fit: contain; width: 24px; }
+.scroll-indicator { aspect-ratio: 0.46; object-fit: contain; width: 39px; align-self: center; margin-top: 59px; }
+.main-content { display: flex; flex-direction: column; line-height: normal; width: 84%; margin-left: 20px; }
+.content-wrapper { display: flex; flex-direction: column; position: relative; min-height: 650px; flex-grow: 1; align-items: end; max-width: 1253px; padding: 20px 80px 941px; }
+.background-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: contain; object-position: top; }
+.logo { aspect-ratio: 3.36; object-fit: contain; width: 131px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35); }
 
 @media (max-width: 991px) {
-  .hero-container {
-    padding-left: 20px;
-  }
-
-  .hero-layout {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-
-  .logo-column {
-    width: 100%;
-  }
-
-  .content-column {
-    width: 100%;
-  }
-
-  .image-container {
-    max-width: 100%;
-    margin-top: 40px;
-    padding: 0 20px 100px;
-  }
+    .profile-container { padding-left: 20px; }
+    .profile-layout { flex-direction: column; align-items: stretch; gap: 0; }
+    .sidebar { width: 100%; }
+    .profile-card { margin-top: 40px; }
+    .profile-name { margin-top: 40px; }
+    .social-links { margin-left: 2px; }
+    .nav-item { margin-top: 40px; white-space: initial; }
+    .scroll-indicator { margin-top: 40px; }
+    .main-content { width: 100%; }
+    .content-wrapper { max-width: 100%; margin-top: 40px; padding: 0 20px 100px; }
 }
 </style>
 
-<section class="hero-container">
-  <div class="hero-layout">
-    <div class="logo-column">
-      <div class="logo-wrapper">
-        <Symbol data-el="symbol"></Symbol>
-      </div>
+<section class="profile-container">
+    <div class="profile-layout">
+        <nav class="sidebar">
+            <div class="profile-card">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1861366485886e7efeec29e747ffcd0df208f00cea2ac664c14bd15c9776c393?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Profile photo of Afshin Tavakkoli" class="profile-image" />
+                <h1 class="profile-name">Afshin Tavakkoli</h1>
+                <div class="social-links">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f556ef31c27ee8f3a28ee18b42c938caed216c0b3eb5815d8b2233c0e4d9da2d?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Social media link" class="social-icon" />
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/98ae3d2726e6270d8519bc66891adeafa08d931bc9d349d0c2e42be8fec830db?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Social media link" class="social-icon" />
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/deaa7d96956a4569cc5c083bf022deee41eff5cf6434967fd1afc22a3ae51fbd?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Social media link" class="social-icon" />
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/18627b7f02ba2c631d475b1abff565d6ab02651297b3a590f5dfed07a277b572?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Social media link" class="social-icon" />
+                </div>
+                <a href="#about" class="nav-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/39a02abe3f9375f0178dcb089019c3842514e2e8cc6d0dee8e7714acb595d4a7?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="nav-icon" />
+                    <span>About</span>
+                </a>
+                <a href="#skills" class="nav-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e757774758463c1517602c9ed2b76aa2ec14d49642ff04bd6a12dc7f5e80b04?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="nav-icon" />
+                    <span>Skills</span>
+                </a>
+                <a href="#experiences" class="nav-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf017543fa212d87ba2854394034d5a163e0a900654d8fa7bba9b3dd1dc14d5e?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="nav-icon" />
+                    <span>Experiences</span>
+                </a>
+                <a href="#certificates" class="nav-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fae12ae18f2c420a0577c8d4ac53c29dfb639c2e0f05fa6c10d4b0eb773aaa7c?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="nav-icon-cert" />
+                    <span>Certificates</span>
+                </a>
+                <a href="#services" class="nav-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/073533a78ec85f53183729e78bca28abbc0c16250c689b5a5d75fb412e54cc61?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="nav-icon" />
+                    <span>Services</span>
+                </a>
+                <a href="#contacts" class="nav-item">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/746f7a8414f5aabf793337cd92e05badbcd728c572c877410edac0c11c091810?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="nav-icon-contact" />
+                    <span>Contacts</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e8cca2adf55b633bb4fc17ef6fa6229a02b95e0603159cf3cc8b6e612531932?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" class="scroll-indicator" />
+            </div>
+        </nav>
+        <main class="main-content">
+            <div class="content-wrapper">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b03cd792865f41aa346abd18b13313799dd3c6dd5551e0cb7563914cbb93458?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Background decoration" class="background-image" />
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/063f43b6506e6caca9b1b7bf32e3e6bf5fa91b9bcc829b4239e0c89334e5ab1b?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Logo" class="logo" />
+            </div>
+        </main>
     </div>
-    <div class="content-column">
-      <div class="image-container">
-        <img class="background-image" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b03cd792865f41aa346abd18b13313799dd3c6dd5551e0cb7563914cbb93458?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="" />
-        <img class="overlay-image" loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/063f43b6506e6caca9b1b7bf32e3e6bf5fa91b9bcc829b4239e0c89334e5ab1b?placeholderIfAbsent=true&apiKey=7b74d39c9b5a4d72b68ac4d054e82d1c" alt="Overlay graphic element" />
-      </div>
-    </div>
-  </div>
 </section>
-
-<script>
-(() => {
-  const state = {};
-  let context = null;
-  let nodesToDestroy = [];
-  let pendingUpdate = false;
-
-  function destroyAnyNodes() {
-    nodesToDestroy.forEach((el) => el.remove());
-    nodesToDestroy = [];
-  }
-
-  function update() {
-    if (pendingUpdate === true) {
-      return;
-    }
-    pendingUpdate = true;
-    document.querySelectorAll("[data-el='symbol']").forEach((el) => {
-      el.setAttribute("symbol", {});
-    });
-    destroyAnyNodes();
-    pendingUpdate = false;
-  }
-
-  update();
-})();
-</script>
