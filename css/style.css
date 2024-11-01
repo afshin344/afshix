@@ -548,6 +548,8 @@
         padding-right: 0; /* حذف فاصله اضافی از سمت راست */
         text-align: center; /* وسط‌چین کردن محتوا */
         margin: 0 auto; /* قرار دادن در وسط صفحه */
+        text-align: left; /* چپ‌چین کردن متن */
+        max-width: 90%; /* محدود کردن عرض برای مرکزیت بهتر */
     }
 
     /* تنظیمات دیگر، مانند تغییر عرض برای بخش‌های خاص */
@@ -558,6 +560,8 @@
         margin-right: auto;
     }
 }
+
+<link href="css/style.css?v=1.1" rel="stylesheet">
 
 
 
