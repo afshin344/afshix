@@ -239,7 +239,7 @@
     width: 100%;
     height: 100%;
     top: -100%;
-    left: 0;
+    left: 100px;
     padding: 50px;
     background: rgba(0, 0, 0, .04);
     transition: 0.5s;
@@ -505,6 +505,61 @@
     }
 }
 /*** footer End ***/
+.header-content,
+.about-header,
+.education-header,
+.experience-header,
+.skills-header,
+.contact-header,
+.testimonial-header,
+.blog-header,
+.portfolio-header,
+.service-header {
+    background-color: #648B84 !important; /* رنگ دلخواه شما */
+}
+
+
+.header-content,
+.about-header,
+.education-header,
+.experience-header,
+.skills-header,
+.contact-header,
+.testimonial-header,
+.blog-header,
+.portfolio-header,
+.service-header {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    /* تنظیم برای وسط‌چین کردن محتوا */
+    .header-img,
+    .about-content,
+    .education-content,
+    .experience-content,
+    .skills-content,
+    .service-content,
+    .portfolio-content,
+    .blog-content,
+    .testimonial-content,
+    .contact-content {
+        padding-left: 0; /* حذف فاصله اضافی از سمت چپ */
+        padding-right: 0; /* حذف فاصله اضافی از سمت راست */
+        text-align: center; /* وسط‌چین کردن محتوا */
+        margin: 0 auto; /* قرار دادن در وسط صفحه */
+    }
+
+    /* تنظیمات دیگر، مانند تغییر عرض برای بخش‌های خاص */
+    .about-img,
+    .education-item,
+    .experience-item {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
 
 
 
