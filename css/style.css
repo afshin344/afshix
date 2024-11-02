@@ -596,11 +596,15 @@
 .nav-section .navbar {
     position: fixed;
     top: 50%;
-    right: 10px; /* اضافه کردن فاصله از سمت راست صفحه */
+    right: 5px; /* اضافه کردن فاصله از سمت راست صفحه */
     transform: translateY(-50%);
     width: auto;
     z-index: 1000;
     padding: 10px 0;
+	/*background-color: rgba(255, 255, 255, 0.9); /* رنگ سفید با شفافیت */
+    /*backdrop-filter: blur(5px); /* ایجاد محو شدن پشت‌زمینه در صورت تمایل */
+    /*border-radius: 8px; /* گرد کردن لبه‌های منو در صورت نیاز */
+	
 }
 
 .navbar .navbar-nav {
@@ -610,17 +614,23 @@
 }
 
 .navbar .nav-item {
+	min-width: 45px;
     overflow: hidden;
     white-space: nowrap;
-    width: 40px; /* اندازه اولیه برای نمایش فقط آیکن */
+    width: 50px; /* اندازه اولیه برای نمایش فقط آیکن */
     transition: width 0.3s ease, background-color 0.3s ease;
+	/*background-color: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(5px);
+    margin-bottom: 5px; /* فاصله بین آیتم‌ها برای جداسازی بهتر */
+    /*border-radius: 10px; /* گرد کردن لبه‌ها */
+    /*padding: 10px;*/
 }
 
 .navbar .nav-item:hover {
     width: 150px; /* افزایش عرض آیتم منو هنگام هاور */
     background-color: white; /* پس‌زمینه سفید برای آیتم هاور شده */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه برای آیتم هاور شده */
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .navbar .nav-link {
@@ -675,7 +685,11 @@ html {
 .navbar .nav-link span {
     margin-right: 10px; /* فاصله بین آیکن و متن */
 }
-
+.skills-item svg {
+    width: 50px;
+    height: 50px;
+    color: #015FC9; /* رنگ دلخواه */
+}
 
 
 
