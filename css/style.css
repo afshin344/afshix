@@ -163,7 +163,7 @@
 }
 
 
-/*** Navbar Start ***/
+/*** Navbar Start
 .nav-section {
     position: relative;
 }
@@ -235,7 +235,7 @@
 }
 
 /* افزودن فضای بالای محتوا برای جلوگیری از پوشش توسط منوبار */
-body {
+/*** body {
     padding-top: 70px; /* برابر با ارتفاع منوبار */
 }
 
@@ -593,6 +593,88 @@ body {
     }
 }
 
+.nav-section .navbar {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* اضافه کردن فاصله از سمت راست صفحه */
+    transform: translateY(-50%);
+    width: auto;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.navbar .nav-item {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 40px; /* اندازه اولیه برای نمایش فقط آیکن */
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .nav-item:hover {
+    width: 150px; /* افزایش عرض آیتم منو هنگام هاور */
+    background-color: white; /* پس‌زمینه سفید برای آیتم هاور شده */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه برای آیتم هاور شده */
+    border-radius: 4px;
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    color: #000;
+    padding: 10px 15px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.navbar .nav-link span {
+    margin-left: 8px; /* فاصله بین آیکن و متن */
+}
+
+.navbar .navbar-nav .nav-item {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 40px; /* اندازه پیش‌فرض برای نمایش فقط آیکن */
+    transition: width 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-item:hover {
+    width: 150px; /* اندازه بیشتر برای نمایش آیکن و متن */
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    color: #000;
+    padding: 10px 15px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.navbar .nav-link span {
+    margin-left: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    color: #000;
+    padding: 10px 15px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.navbar .nav-link span {
+    margin-right: 10px; /* فاصله بین آیکن و متن */
+}
 
 
 
