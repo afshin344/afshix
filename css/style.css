@@ -225,6 +225,20 @@
     margin-right: calc(100% + 40px);
     color: var(--bs-primary);
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* اطمینان از نمایش بالاتر */
+}
+
+/* افزودن فضای بالای محتوا برای جلوگیری از پوشش توسط منوبار */
+body {
+    padding-top: 70px; /* برابر با ارتفاع منوبار */
+}
+
 /*** Navbar End ***/
 
 
@@ -562,6 +576,24 @@
 }
 
 <link href="css/style.css?v=1.1" rel="stylesheet">
+
+@@media (max-width: 991px) {
+    /* اطمینان از اینکه منو چپ‌چین شود */
+    .navbar-collapse {
+        text-align: left !important;
+    }
+    .navbar-nav {
+        display: flex !important;  /* استفاده از Flexbox برای کنترل بهتر چیدمان */
+        flex-direction: column; /* آیتم‌ها زیر هم قرار بگیرند */
+        align-items: flex-start; /* آیتم‌ها را به چپ تراز می‌کند */
+    }
+    .navbar-nav .nav-link {
+        text-align: left !important; /* چپ‌چین کردن لینک‌ها */
+        width: 100%; /* اطمینان از چپ‌چین بودن در تمام عرض */
+    }
+}
+
+
 
 
 
