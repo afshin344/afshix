@@ -595,7 +595,7 @@
 
 .nav-section .navbar {
     position: fixed;
-    top: 55%;
+    top: 60%;
     right: 5px; /* اضافه کردن فاصله از سمت راست صفحه */
     transform: translateY(-50%);
     width: auto;
