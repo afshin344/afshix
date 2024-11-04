@@ -696,15 +696,30 @@ html {
     margin-right: 10px; /* فاصله بین لوگو و متن */
 }
 
-.logo-text {
-    margin-bottom: -5px; /* تنظیم فاصله پایین برای هم‌راستایی با لوگو */
-}
-
 .button-container {
     display: flex;
     flex-wrap: wrap; /* برای چرخش به حالت عمودی در صفحه‌های کوچک */
     gap: 10px; /* فاصله بین دکمه‌ها */
 }
+.text {
+    font-size: 32px; /* اندازه متن دلخواه */
+    color: #ffffff; /* رنگ سفید برای متن */
+    line-height: 1.2; /* فاصله بین خطوط برای تراز بهتر */
+	font-weight: 500; /* وزن برای بولد کردن */
+}
+.centered-container {
+    display: flex;
+    justify-content: center; /* تراز افقی در مرکز */
+    align-items: baseline; /* هم‌تراز کردن پایین لوگو و متن */
+    height: 100vh; /* پر کردن ارتفاع صفحه برای مرکزیت */
+}
+
+.logo-image {
+    max-width: 40px; /* تنظیم عرض لوگو */
+    height: auto;
+    margin-right: 20px; /* فاصله بین لوگو و متن */
+	transform: translateY(-15px); /* حرکت لوگو به بالا */
+
 
 
 
