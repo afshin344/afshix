@@ -720,6 +720,33 @@ html {
     margin-right: 20px; /* فاصله بین لوگو و متن */
 	transform: translateY(-15px); /* حرکت لوگو به بالا */
 
+}
+.footer-credit {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* استایل لینک‌ها در فوتر */
+.footer-credit a,
+.footer-credit a:link,
+.footer-credit a:visited,
+.footer-credit a:hover,
+.footer-credit a:active {
+    color: rgba(255, 255, 255, 0.6) !important; /* تنظیم رنگ کم‌رنگ */
+    text-decoration: none !important;           /* حذف آندرلاین */
+    font-size: inherit !important;              /* تنظیم اندازه فونت مشابه متن اصلی */
+    font-weight: normal !important;             /* اجباری کردن ضخامت نرمال */
+}
+
+.footer-icons {
+    display: flex;
+    gap: 12px; /* فاصله 12 پیکسل بین آیکن‌ها */
+}
+
+
+
 
 
 
