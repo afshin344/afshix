@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation Project</title>
-    <link href="../css/style.css" rel="stylesheet">
+    <title>Responsive Image Slider</title>
     <style>
-        /* تنظیمات بدنه */
+        /* تنظیمات کلی */
         * {
             margin: 0;
             padding: 0;
@@ -24,29 +23,68 @@
 
         /* نوار متن بالا */
         .content-bar {
-            width: 100vw; /* تنظیم به عرض کامل پنجره */
-            background-color: #607d8b; /* رنگ آبی خاکستری */
+            width: 100vw;
+            background-color: #607d8b;
             color: #fff;
             text-align: center;
-            padding: 10px 0; /* کاهش ارتفاع */
+            padding: 10px 0;
             font-family: Arial, sans-serif;
             font-size: 1rem;
         }
 
-        /* تنظیمات تصویر */
-        .content img {
-            max-height: 95vh; /* اندازه 90٪ از ارتفاع صفحه */
-            width: auto;
-            display: block;
-            margin: 0 auto;
-            transition: opacity 0.5s ease;
-			padding-top: 1vh;
-            padding-bottom: 1vh; /* فاصله 5٪ از پایین صفحه */
+        /* تنظیمات برای محتوای تصویر */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* تنظیم برای پر کردن کل صفحه */
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
-        /* کلاس برای افکت محو */
-        .fade {
-            opacity: 0;
+        /* تنظیمات تصویر */
+        .content img {
+            max-height: 100%;  /* تنظیم حداکثر ارتفاع */
+            max-width: 100%;   /* تنظیم حداکثر عرض */
+            height: auto;      /* مقیاس‌گذاری تصاویر در حالت موبایلی */
+            width: auto;
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        /* افکت حرکت به سمت چپ و راست */
+        .slide-in-right {
+            animation: slideFromRight 0.5s forwards;
+        }
+        .slide-out-left {
+            animation: slideToLeft 0.5s forwards;
+        }
+        .slide-in-left {
+            animation: slideFromLeft 0.5s forwards;
+        }
+        .slide-out-right {
+            animation: slideToRight 0.5s forwards;
+        }
+
+        /* انیمیشن‌های حرکت */
+        @keyframes slideFromRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes slideToLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        @keyframes slideFromLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes slideToRight {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
         }
 
         /* تنظیمات فلش‌ها */
@@ -61,69 +99,27 @@
             z-index: 10;
         }
         .arrow-left {
-            left: 50px;
+            left: 20px;
         }
         .arrow-right {
-            right: 50px;
+            right: 20px;
         }
-		/* تنظیمات فلش‌ها */
-		.arrow {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			font-size: 2.5rem; /* کوچک‌تر شدن اندازه فلش برای موبایل */
-			color: #000;
-			cursor: pointer;
-			user-select: none;
-			z-index: 10;
-		}
 
-		/* موقعیت‌دهی فلش‌ها برای صفحات کوچک‌تر */
-		@media (max-width: 600px) {
-			.arrow-left {
-				left: 10px;
-			}
-			.arrow-right {
-				right: 10px;
-			}
-		}
-		/* تنظیمات عمومی برای تصاویر */
-		.content img {
-			max-width: 100%;
-			height: auto;
-		}
-
-		/* تنظیمات خاص برای صفحات کوچک‌تر از 600 پیکسل */
-		@media (max-width: 600px) {
-			.content img {
-				max-height: 70vh; /* تنظیم حداکثر ارتفاع برای نمایش در موبایل */
-				width: 100%; /* اندازه عرض تصویر به ۱۰۰٪ صفحه تنظیم می‌شود */
-				padding-top: 0; /* حذف فاصله اضافی بالا */
-				padding-bottom: 0; /* حذف فاصله اضافی پایین */
-			}
-		}
-		/* تنظیمات عمومی برای قرارگیری تصویر */
-		.content {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh; /* برای پر کردن ارتفاع صفحه */
-		}
-
-		/* تنظیمات خاص برای صفحات کوچک‌تر از 600 پیکسل */
-		@media (max-width: 600px) {
-			.content {
-				height: auto; /* اجازه می‌دهد که بخش محتوا با اندازه تصویر تنظیم شود */
-				min-height: 70vh; /* حداقل ارتفاع برای بهبود نمایش */
-				padding-top: 15vh; /* اضافه کردن فضای خالی از بالا برای مرکز کردن بهتر */
-			}
-		}
+        /* مدیا کوئری برای حالت موبایلی */
+        @media (max-width: 768px) {
+            .content {
+                height: 85vh; /* کاهش ارتفاع برای نمایش بهتر در موبایل */
+            }
+            .arrow {
+                font-size: 2rem; /* کوچک کردن فلش‌ها در موبایل */
+            }
+        }
     </style>
 </head>
 <body>
     <!-- نوار متن بالا -->
     <div class="content-bar">
-        <p>Mobile App Design: The impact of the most available device</p>
+        <p>Documents that show the depth of your thinking</p>
     </div>
 
     <!-- محتوای تصویر -->
@@ -136,63 +132,57 @@
     <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
 
     <script>
-        // لیست تصاویر برای این صفحه
+        // لیست تصاویر
         const images = ["../img/mob1.png", "../img/mob2.png", "../img/mob3.png", "../img/mob4.png"];
         let currentIndex = 0;
 
-        // تابع نمایش تصویر بعدی با افکت محو
+        // تابع نمایش تصویر بعدی با افکت حرکت
         function nextImage() {
             const imageElement = document.getElementById("galleryImage");
-            imageElement.classList.add("fade"); // اضافه کردن کلاس محو
+            imageElement.classList.add("slide-out-left");
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % images.length;
                 imageElement.src = images[currentIndex];
-                imageElement.classList.remove("fade"); // حذف کلاس محو پس از تغییر
-            }, 300);
+                imageElement.classList.remove("slide-out-left");
+                imageElement.classList.add("slide-in-right");
+                setTimeout(() => imageElement.classList.remove("slide-in-right"), 100);
+            }, 100);
         }
 
-        // تابع نمایش تصویر قبلی با افکت محو
+        // تابع نمایش تصویر قبلی با افکت حرکت
         function previousImage() {
             const imageElement = document.getElementById("galleryImage");
-            imageElement.classList.add("fade");
+            imageElement.classList.add("slide-out-right");
             setTimeout(() => {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 imageElement.src = images[currentIndex];
-                imageElement.classList.remove("fade");
-            }, 300);
+                imageElement.classList.remove("slide-out-right");
+                imageElement.classList.add("slide-in-left");
+                setTimeout(() => imageElement.classList.remove("slide-in-left"), 100);
+            }, 100);
+        }
 
+        // رویداد شنونده برای دکمه‌های کیبورد
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowRight") nextImage();
+            else if (event.key === "ArrowLeft") previousImage();
+        });
+
+        // کد برای تشخیص حرکت دست (Swipe)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        document.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        }, false);
+        document.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, false);
+
+        function handleSwipeGesture() {
+            if (touchEndX < touchStartX - 50) nextImage();
+            else if (touchEndX > touchStartX + 50) previousImage();
         }
     </script>
-	<script>
-		// رویداد شنونده برای دکمه‌های کیبورد
-		document.addEventListener("keydown", function(event) {
-			if (event.key === "ArrowRight") {
-				nextImage();  // اگر دکمه‌ی راست فشرده شد
-			} else if (event.key === "ArrowLeft") {
-				previousImage();  // اگر دکمه‌ی چپ فشرده شد
-			}
-		});
-		// کد برای تشخیص حرکت دست (Swipe)
-		let touchStartX = 0;
-		let touchEndX = 0;
-
-		document.addEventListener('touchstart', function(event) {
-			touchStartX = event.changedTouches[0].screenX;
-		}, false);
-
-		document.addEventListener('touchend', function(event) {
-			touchEndX = event.changedTouches[0].screenX;
-			handleSwipeGesture();
-		}, false);
-
-		function handleSwipeGesture() {
-			if (touchEndX < touchStartX - 50) {
-				nextImage();
-			} else if (touchEndX > touchStartX + 50) {
-				previousImage();
-			}
-		}
-	</script>
-
 </body>
 </html>
