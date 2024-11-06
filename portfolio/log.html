@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image Slider</title>
+    <title>Simple Image Slider</title>
     <style>
-        /* تنظیمات کلی */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +20,6 @@
             overflow: hidden;
         }
 
-        /* نوار متن بالا */
         .content-bar {
             width: 100vw;
             background-color: #607d8b;
@@ -32,12 +30,11 @@
             font-size: 1rem;
         }
 
-        /* تنظیمات برای محتوای تصویر */
         .content {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* تنظیم برای پر کردن کل صفحه */
+            height: 100vh;
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -45,49 +42,14 @@
             padding-bottom: 10px;
         }
 
-        /* تنظیمات تصویر */
         .content img {
-            max-height: 100%;  /* تنظیم حداکثر ارتفاع */
-            max-width: 100%;   /* تنظیم حداکثر عرض */
-            height: auto;      /* مقیاس‌گذاری تصاویر در حالت موبایلی */
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
             width: auto;
-            transition: transform 0.5s ease;
             position: relative;
         }
 
-        /* افکت حرکت به سمت چپ و راست */
-        .slide-in-right {
-            animation: slideFromRight 0.5s forwards;
-        }
-        .slide-out-left {
-            animation: slideToLeft 0.5s forwards;
-        }
-        .slide-in-left {
-            animation: slideFromLeft 0.5s forwards;
-        }
-        .slide-out-right {
-            animation: slideToRight 0.5s forwards;
-        }
-
-        /* انیمیشن‌های حرکت */
-        @keyframes slideFromRight {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
-        }
-        @keyframes slideToLeft {
-            from { transform: translateX(0); }
-            to { transform: translateX(-100%); }
-        }
-        @keyframes slideFromLeft {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }
-        @keyframes slideToRight {
-            from { transform: translateX(0); }
-            to { transform: translateX(100%); }
-        }
-
-        /* تنظیمات فلش‌ها */
         .arrow {
             position: fixed;
             top: 50%;
@@ -105,70 +67,47 @@
             right: 20px;
         }
 
-        /* مدیا کوئری برای حالت موبایلی */
         @media (max-width: 768px) {
             .content {
-                height: 85vh; /* کاهش ارتفاع برای نمایش بهتر در موبایل */
+                height: 85vh;
             }
             .arrow {
-                font-size: 2rem; /* کوچک کردن فلش‌ها در موبایل */
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- نوار متن بالا -->
     <div class="content-bar">
-        <p>Documents that show the depth of your thinking</p>
+        <p>Logo Design: A short way for long concepts</p>
     </div>
 
-    <!-- محتوای تصویر -->
     <div class="content">
         <img id="galleryImage" src="../img/log1.jpg" alt="Documentation Image">
     </div>
 
-    <!-- دکمه‌های فلش -->
     <div class="arrow arrow-left" onclick="previousImage()">&#10094;</div>
     <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
 
     <script>
-        // لیست تصاویر
         const images = ["../img/log1.jpg", "../img/log2.jpg", "../img/log3.jpg", "../img/log4.jpg"];
         let currentIndex = 0;
 
-        // تابع نمایش تصویر بعدی با افکت حرکت
         function nextImage() {
-            const imageElement = document.getElementById("galleryImage");
-            imageElement.classList.add("slide-out-left");
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                imageElement.src = images[currentIndex];
-                imageElement.classList.remove("slide-out-left");
-                imageElement.classList.add("slide-in-right");
-                setTimeout(() => imageElement.classList.remove("slide-in-right"), 100);
-            }, 100);
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("galleryImage").src = images[currentIndex];
         }
 
-        // تابع نمایش تصویر قبلی با افکت حرکت
         function previousImage() {
-            const imageElement = document.getElementById("galleryImage");
-            imageElement.classList.add("slide-out-right");
-            setTimeout(() => {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                imageElement.src = images[currentIndex];
-                imageElement.classList.remove("slide-out-right");
-                imageElement.classList.add("slide-in-left");
-                setTimeout(() => imageElement.classList.remove("slide-in-left"), 100);
-            }, 100);
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("galleryImage").src = images[currentIndex];
         }
 
-        // رویداد شنونده برای دکمه‌های کیبورد
         document.addEventListener("keydown", function(event) {
             if (event.key === "ArrowRight") nextImage();
             else if (event.key === "ArrowLeft") previousImage();
         });
 
-        // کد برای تشخیص حرکت دست (Swipe)
         let touchStartX = 0;
         let touchEndX = 0;
         document.addEventListener('touchstart', function(event) {
