@@ -93,7 +93,7 @@
                     <a href="#pigraExperience" class="nav-item nav-link"><span class="fas fa-briefcase"></span> Experience</a>
                     <a href="#pigraSkills" class="nav-item nav-link"><span class="fas fa-tools"></span> Skills</a>
 					<a href="#pigraServices" class="nav-item nav-link"><span class="fab fa-servicestack"></span> Services</a>
-					<a href="#pigraPortfolio" class="nav-item nav-link"><span class="fas fa-th-large" style="color: #FA6F6F !important;"></span> Portfolio</a>
+					<a href="#pigraPortfolio" class="nav-item nav-link expanded"><span class="fas fa-th-large" style="color: #FA6F6F !important;"></span> Portfolio</a>
 					<a href="#pigraContact" class="nav-item nav-link"><span class="fas fa-address-book"></span> Contact</a>
 				</div>
             </nav>
@@ -346,6 +346,19 @@
                     <div class="col-lg-9">
                         <div class="experience-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-4">
+								<div class="col-12">
+                                    <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="fs-5 mb-0 me-4">UM-ProGuide (SaaS), United States </p>
+                                            <div>
+                                                <span class="fa fa-calendar me-1"></span> 2024 - 2025
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-3">UI/UX and Product Designer</h4>
+                                        <p class="mb-0">Designed a web-based application as part of a digital solution for a research initiative aimed at increasing specialized awareness among patients and individuals undergoing prostate cancer screening at the University of Miami Miller School of Medicine. The project was implemented under the academic supervision of Dr. Hossein Sharifi, Urologic Oncology Fellow and Instructor at the University of Miami. It aimed to inform the target population (men), improve clinical workflow efficiency, and generate actionable data for analysis and decision-making.
+                                        </p>
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s">
                                         <div class="d-flex align-items-center mb-3">
@@ -354,7 +367,7 @@
                                                 <span class="fa fa-calendar me-1"></span> 2022 - 2024
                                             </div>
                                         </div>
-                                        <h4 class="mb-3">UI/UX and Product Designer</h4>
+                                        <h4 class="mb-3">UI/UX Designer</h4>
                                         <p class="mb-0">Conceptualizing the interaction design and experience for a website facilitating gifting and affiliate marketing. As a generalist, I was responsible for creating a visually appealing yet clear design to guide users in finding and purchasing the perfect gift while also offering them opportunities for revenue generation in this field. Proper process design resulted in reducing errors during usability testing to less than 10%. By prototyping this concept on Figma and closely collaborating with the development team, I helped accelerate and enhance the implementation process.  
 										<a href="https://giftpals.com/" target="_blank">https://giftpals.com/</a>
                                         </p>
@@ -424,7 +437,7 @@
                                                 <span class="fa fa-calendar me-1"></span> 2004 - 2009
                                             </div>
                                         </div>
-                                        <h4 class="mb-3">Graphic designer</h4>
+                                        <h4 class="mb-3">Graphic Designer</h4>
                                         <p class="mb-0">•	Macromedia Flash Senior Designer and Computer technical expert (Part-time)
                                         </p>
                                     </div>
@@ -877,10 +890,10 @@
 											</div>
 											<div class="col-8">
 												<div class="h-100">
-													<p class="text-body mb-3"><i class="fa fa-paint-brush me-2"></i>Logo Design</p>
-													<a href="portfolio/log.html" target="_blank" class="d-inline-block h4 mb-4">A short way for long concepts</a>
+													<p class="text-body mb-3"><i class="fa fa-paint-brush me-2"></i>Last Project (SaaS)</p>
+													<a href="portfolio/log.html" target="_blank" class="d-inline-block h4 mb-4">A web app is a simple yet effective solution</a>
 													<div class="py-2 px-3 bg-light d-flex justify-content-between">
-                                                        <p class="mb-0 text-body">8 Samples</p>
+                                                        <p class="mb-0 text-body">10 Steps</p>
                                                     </div>
 												</div>
 											</div>
@@ -1173,6 +1186,43 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+			<script>
+				document.addEventListener('DOMContentLoaded', function () {
+					const portfolioItem = document.querySelector('.nav-link.expanded');
+					const navLinks = document.querySelectorAll('.nav-link');
+					const navbar = document.querySelector('.navbar'); // کل ناحیه منو
+
+					let isExpandedClosed = false;
+
+					function removeExpanded() {
+						if (portfolioItem && portfolioItem.classList.contains('expanded')) {
+							portfolioItem.classList.remove('expanded');
+							isExpandedClosed = true;
+						}
+					}
+
+					// کلیک یا هاور روی آیتم‌های منو
+					navLinks.forEach(link => {
+						link.addEventListener('click', removeExpanded);
+						link.addEventListener('mouseenter', removeExpanded);
+						link.addEventListener('touchstart', removeExpanded);
+					});
+
+					// کلیک یا تاچ خارج از منو
+					document.addEventListener('click', function (event) {
+						if (!navbar.contains(event.target)) {
+							removeExpanded();
+						}
+					});
+
+					document.addEventListener('touchstart', function (event) {
+						if (!navbar.contains(event.target)) {
+							removeExpanded();
+						}
+					});
+				});
+			</script>
+
 
     </body>
 
