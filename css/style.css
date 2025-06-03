@@ -751,6 +751,22 @@ html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+.portfolio-img-custom {
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-img-custom {
+        max-height: 220px;
+    }
+}
+@media (max-width: 767.98px) {
+    .blog-item {
+        margin-bottom: 50px;
+    }
+}
 
 
 
