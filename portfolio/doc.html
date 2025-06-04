@@ -11,14 +11,13 @@
             box-sizing: border-box;
         }
 
-        body, html {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            overflow: hidden;
-        }
+		body, html {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 
         .content-bar {
             width: 100vw;
@@ -75,6 +74,140 @@
                 font-size: 2rem;
             }
         }
+		.fade-out {
+			animation: fadeOut 0.3s ease-out;
+		}
+
+		.fade-in {
+			animation: fadeIn 0.3s ease-in;
+		}
+
+		@keyframes fadeOut {
+			from { opacity: 1; }
+			to { opacity: 0; }
+		}
+
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+		.slide-in-left {
+			animation: slideInLeft 0.4s ease-in;
+		}
+
+		.slide-in-right {
+			animation: slideInRight 0.4s ease-in;
+		}
+
+		@keyframes slideInLeft {
+			from {
+				transform: translateX(-100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideInRight {
+			from {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+		html, body {
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		body {
+			background-image: url('../img/992up.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		.content {
+			height: 100vh;
+			padding: 0;
+			}
+
+		/* برای موبایل و تبلت - رزولوشن پایین‌تر از 992px */
+		@media (max-width: 991.98px) {
+			html, body {
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			body {
+				background-image: url('../img/992dn.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+		}
+		@media (max-width: 991.98px) {
+			.content {
+				height: 100vh;
+				padding: 0;
+			}
+		}
+
+		.doc-description {
+			position: absolute;
+			top: 200px;
+			left: 100px;
+			width: 400px;
+			padding: 32px;
+			border-radius: 8px;
+			font-family: Arial, sans-serif;
+			z-index: 5;
+		}
+
+		.doc-description h2 {
+			font-size: 1.3rem;
+			font-weight: bold;
+			margin-bottom: 8px;
+			color: #333;
+		}
+
+		.doc-description p {
+			font-size: 1.0rem;
+			line-height: 1.6;
+			color: #444;
+		}
+
+		/* نسخه موبایل: انتقال توضیح به بالا */
+		@media (max-width: 991.98px) {
+			body, html {
+				overflow-y: auto;
+				height: auto;
+				flex-direction: column;
+				align-items: stretch;
+			}
+
+			.doc-description {
+				position: static;
+				width: 90%;
+				margin: 20px auto 0 auto;
+			}
+
+			.content {
+				height: auto;
+				padding-top: 20px;
+			}
+
+			.content img {
+				max-height: 60vh;
+			}
+}
+
     </style>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5FEHCDGXQ"></script>
@@ -87,50 +220,90 @@
 	</script>
 </head>
 <body>
-    <div class="content-bar">
-        <p>Documents that show the depth of your thinking</p>
-    </div>
+    
+	<div class="doc-description">
+		<h2>P.R.D</h2>
+		<p>It goes without saying that the first step<br>in creating any product is conducting<br>interviews with its stakeholders. This is<br>where a document known as the PRD<br>comes into play. (Product Requirements Document) outlines the minimum<br>expectations of both the client and the<br>users, reminds us of the rules and responsibilities, and breaks the work<br>into clear, manageable parts.<br>It enables us to approach the product<br>creation process from various angles<br>and methodologies, as if the product<br>already exists in concept.</p>
+	</div>
 
     <div class="content">
-        <img id="galleryImage" src="../img/doc1.png" alt="Documentation Image">
+        <img id="galleryImage" src="../img/doc1.jpg" alt="Documentation Image">
     </div>
 
     <div class="arrow arrow-left" onclick="previousImage()">&#10094;</div>
     <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
 
-    <script>
-        const images = ["../img/doc1.png", "../img/doc2.png", "../img/doc3.png", "../img/doc4.png", "../img/doc5.png", "../img/doc6.png"];
-        let currentIndex = 0;
+	<script>
+		const images = ["../img/doc1.jpg", "../img/doc2.jpg", "../img/doc3.jpg", "../img/doc4.png", "../img/doc5.png", "../img/doc6.jpg", "../img/doc7.jpg", "../img/doc8.png", "../img/doc9.png", "../img/doc10.jpg", "../img/doc11.jpg"];
+			const descriptions = [
+				{ title: "P.R.D", text: "It goes without saying that the first step<br>in creating any product is conducting<br>interviews with its stakeholders. This is<br>where a document known as the PRD<br>comes into play. (Product Requirements Document) outlines the minimum<br>expectations of both the client and the<br>users, reminds us of the rules and responsibilities, and breaks the work<br>into clear, manageable parts.<br>It enables us to approach the product<br>creation process from various angles<br>and methodologies, as if the product<br>already exists in concept." },
+				{ title: "Persona", text: "A persona is not a fictional character; it represents real users. As the advocate for the user throughout the product development process, you must continuously refer back to it. By conducting user research and interviews, it is possible to group users into key segments and uncover their needs through individual scenarios. A persona captures the essence of your audience, built to guide design decisions with empathy and clarity." },
+				{ title: "User flow", text: "This is one of the most essential tools for mapping out how users interact with a product to achieve their goals. During my design process, I rely on detailed site maps and my own sticky note sketches to ensure that every possible scenario is considered. I make sure no user need—or the journey to fulfill it—is missed. This careful planning helps create intuitive and efficient user experiences across the entire product." },
+				{ title: "ُSketch", text: "As team members discuss and list ideas, I start sketching the concepts. This visual thinking helps everyone form a shared mental image of the product. We break the product down into understandable sections and screens, bringing us one step closer to shaping a meaningful and functional solution." },
+				{ title: "Charts", text: "The core concepts and key components of the product must be clearly presented to stakeholders. During this process, they raise questions, uncover concerns, and offer feedback. It’s also your role to reassure them—by showing how each requirement will be addressed through thoughtful, user-centered solutions." },
+				{ title: "Mind Map", text: "It's time to confront real data and begin categorizing it. This step helps uncover the product's structural and architectural needs. By analyzing the data volume and prioritizing content, we gain a clearer understanding of what the product must support and how it should scale.Don't forget to learn UX writing." },
+				{ title: "Time Table", text: "Through multiple sessions, we gather a reliable estimate of the time and resources needed for design and implementation. Especially in product design, a generalist mindset is essential—being familiar with all areas helps provide accurate forecasts. Ultimately, a well-structured timesheet becomes one of the most valuable tools for all stakeholders" },
+				{ title: "Tidy up the room.", text: "Bring all essential elements together in one organized space, and make it your go-to reference throughout the design process. Don't forget—Auto Layout is what brings it all to life with structure and clarity" },
+				{ title: "Style Guide", text: "A clear and well-defined set of rules is always your saving grace. Whether it’s a style guide, a UI kit, or a full-scale design system, these tools stay by your side. They save time and effort, becoming your team’s sacred reference throughout the product’s lifecycle" },
+				{ title: "Core Design Essentials", text: "Initial definitions, variables, color palettes, fonts, breakpoints, icon families, and everything you need for consistent design — all organized in one place." },
+				{ title: "UI KIT", text: "It goes without saying: no professional design is possible without a well-structured component library. You're not building a house—you’re building the tools that make houses possible. Reusability, consistency, and scalability all start here" }
+			];
 
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
+		let currentIndex = 0;
 
-        function previousImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
+			function showImageWithSlide(index, direction = "right") {
+				const imageElement = document.getElementById("galleryImage");
+				const descriptionBox = document.querySelector(".doc-description");
 
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "ArrowRight") nextImage();
-            else if (event.key === "ArrowLeft") previousImage();
-        });
+				const slideClass = direction === "right" ? "slide-in-right" : "slide-in-left";
 
-        let touchStartX = 0;
-        let touchEndX = 0;
-        document.addEventListener('touchstart', function(event) {
-            touchStartX = event.changedTouches[0].screenX;
-        }, false);
-        document.addEventListener('touchend', function(event) {
-            touchEndX = event.changedTouches[0].screenX;
-            handleSwipeGesture();
-        }, false);
+				imageElement.classList.remove("slide-in-left", "slide-in-right");
 
-        function handleSwipeGesture() {
-            if (touchEndX < touchStartX - 50) nextImage();
-            else if (touchEndX > touchStartX + 50) previousImage();
-        }
-    </script>
+				setTimeout(() => {
+					imageElement.src = images[index];
+					imageElement.classList.add(slideClass);
+
+					// بروزرسانی توضیحات مربوط به هر اسلاید
+					descriptionBox.innerHTML = `
+						<h2>${descriptions[index].title}</h2>
+						<p>${descriptions[index].text}</p>
+					`;
+				}, 50);
+			}
+
+
+		function nextImage() {
+			currentIndex = (currentIndex + 1) % images.length;
+			showImageWithSlide(currentIndex, "right");
+		}
+
+		function previousImage() {
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImageWithSlide(currentIndex, "left");
+		}
+
+		document.addEventListener("keydown", function(event) {
+			if (event.key === "ArrowRight") nextImage();
+			else if (event.key === "ArrowLeft") previousImage();
+		});
+
+		let touchStartX = 0;
+		let touchEndX = 0;
+		document.addEventListener('touchstart', function(event) {
+			touchStartX = event.changedTouches[0].screenX;
+		}, false);
+		document.addEventListener('touchend', function(event) {
+			touchEndX = event.changedTouches[0].screenX;
+			handleSwipeGesture();
+		}, false);
+
+		function handleSwipeGesture() {
+			if (touchEndX < touchStartX - 50) nextImage();
+			else if (touchEndX > touchStartX + 50) previousImage();
+		}
+		
+	</script>
+
+
 </body>
 </html>

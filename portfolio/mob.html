@@ -11,14 +11,12 @@
             box-sizing: border-box;
         }
 
-        body, html {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-            overflow: hidden;
-        }
+		body, html {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 
         .content-bar {
             width: 100vw;
@@ -75,6 +73,140 @@
                 font-size: 2rem;
             }
         }
+		.fade-out {
+			animation: fadeOut 0.3s ease-out;
+		}
+
+		.fade-in {
+			animation: fadeIn 0.3s ease-in;
+		}
+
+		@keyframes fadeOut {
+			from { opacity: 1; }
+			to { opacity: 0; }
+		}
+
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+		.slide-in-left {
+			animation: slideInLeft 0.4s ease-in;
+		}
+
+		.slide-in-right {
+			animation: slideInRight 0.4s ease-in;
+		}
+
+		@keyframes slideInLeft {
+			from {
+				transform: translateX(-100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideInRight {
+			from {
+				transform: translateX(100%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+		html, body {
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		body {
+			background-image: url('../img/992up.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		.content {
+			height: 100vh;
+			padding: 0;
+			}
+
+
+		/* برای موبایل و تبلت - رزولوشن پایین‌تر از 992px */
+		@media (max-width: 991.98px) {
+			html, body {
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			body {
+				background-image: url('../img/992dn.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+		}
+		@media (max-width: 991.98px) {
+			.content {
+				height: 100vh;
+				padding: 0;
+			}
+		}
+		.doc-description {
+			position: absolute;
+			top: 200px;
+			left: 100px;
+			width: 400px;
+			padding: 32px;
+			border-radius: 8px;
+			font-family: Arial, sans-serif;
+			z-index: 1;
+		}
+
+		.doc-description h2 {
+			font-size: 1.3rem;
+			font-weight: bold;
+			margin-bottom: 8px;
+			color: #333;
+		}
+
+		.doc-description p {
+			font-size: 1.0rem;
+			line-height: 1.6;
+			color: #444;
+		}
+
+		/* نسخه موبایل: انتقال توضیح به بالا */
+		@media (max-width: 991.98px) {
+			body, html {
+				overflow-y: auto;
+				height: auto;
+				flex-direction: column;
+				align-items: stretch;
+			}
+
+			.doc-description {
+				position: static;
+				width: 90%;
+				margin: 20px auto 0 auto;
+			}
+
+			.content {
+				height: auto;
+				padding-top: 20px;
+			}
+
+			.content img {
+				max-height: 60vh;
+			}
+		}
+
     </style>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5FEHCDGXQ"></script>
@@ -87,10 +219,11 @@
 	</script>
 </head>
 <body>
-    <div class="content-bar">
-        <p>The impact of the most available device</p>
-    </div>
 
+	<div class="doc-description">
+		<h2>Challange</h2>
+		<p>I designed a wireframe for a native mobile application in the cryptocurrency field. It was part of a professional design challenge targeting experienced users, focusing on secure interactions, efficient workflows, and real-time data visibility. Throughout the process, I conducted research on crypto technologies, user expectations, and platform standards to inform my design decisions.</p>
+	</div>
     <div class="content">
         <img id="galleryImage" src="../img/mob1.png" alt="Documentation Image">
     </div>
@@ -98,39 +231,74 @@
     <div class="arrow arrow-left" onclick="previousImage()">&#10094;</div>
     <div class="arrow arrow-right" onclick="nextImage()">&#10095;</div>
 
-    <script>
-        const images = ["../img/mob1.png", "../img/mob2.png", "../img/mob3.png", "../img/mob4.png"];
-        let currentIndex = 0;
+ <script>
+		const images = ["../img/mob1.png", "../img/mob2.png", "../img/mob3.png", "../img/mob4.png", "../img/mob5.png", "../img/mob6.png", "../img/mob7.png", "../img/mob8.png", "../img/mob9.png", "../img/mob10.png", "../img/mob11.png", "../img/mob12.png"];
+		const descriptions = [
+				{ title: "Challange", text: "I designed a wireframe for a native mobile application in the cryptocurrency field. It was part of a professional design challenge targeting experienced users, focusing on secure interactions, efficient workflows, and real-time data visibility. Throughout the process, I conducted research on crypto technologies, user expectations, and platform standards to inform my design decisions." },
+				{ title: "Transform ", text: "I transformed the wireframe into a high-fidelity prototype, following key visual design principles such as hierarchy, alignment, and consistency. My goal was to create a clear, intuitive interface that supports quick decision-making and ensures a seamless experience for professional crypto users." },
+				{ title: "Giftplas", text: "I worked on the design of an e-commerce platform that allows users to purchase and send gifts to friends and family through affiliate marketing. In addition to shopping features, the platform empowers users to open their own stores and earn income, offering a flexible model for both buyers and sellers. The design focused on clarity, ease of navigation, and a friendly user journey for diverse audiences" },
+				{ title: "Design Iteration", text: "During the process, I encountered many questions and design challenges, especially due to the platform’s dual-purpose nature. To address them, I conducted user interviews and gathered feedback through usability testing on prototypes. Several interface options were explored and tailored to fit the needs of different user segments, ensuring inclusivity and clarity across the experience" },
+				{ title: "Problem Solving", text: "In this design, I not only leveraged familiar visual appeal and established user interaction patterns but also identified user pain points through thorough research. Based on common user scenarios, our team collaborated in brainstorming sessions to develop effective solutions addressing these challenges throughout the process." },
+				{ title: "MotorProz", text: "I designed the MVP for a car buying and selling platform in the UK. Following industry rules and regulations was essential throughout the process. The first milestone focused mainly on the client’s understanding of the market. During this phase, I also experimented with optional design features, which became a valuable learning experience in balancing user needs and project scope." },
+				{ title: "A plenty of CTA", text: "The platform included a wide range of features such as AI-powered tools, gamified experiences, occasion reminders, corporate gifting, group gifts, advanced categorization, and the ability to create personalized lists and niche stores — all of which I was responsible for designing. I also redesigned another product for the same company: a real estate platform, whose landing page is shown in slide two." },
+				{ title: "ِDashboard", text: "Never underestimate the complexity of designing dashboards or admin panels. I had to gain solid knowledge of each business domain and its key KPIs, while also being familiar with analytics tools like Google Analytics. Understanding how these metrics are calculated empowers designers to turn raw data into actionable insights that improve both user experience and business performance." },
+				{ title: "Applications", text: "Designed a multi-purpose PWA aimed at creating a marketplace for selling and recycling household waste, which also helped boost related businesses through collaboration. The platform was scalable and included three separate interfaces — for users, transportation fleets, and storage facilities — to manage a complete cycle of collecting, processing, and converting recyclable materials." },
+				{ title: "UM-ProGuide", text: "The wireframes of my recent project focused on screening and guiding patients with prostate cancer. This web application, designed as a SaaS tool, supported a medical research study that was in the production phase during the time of design." },
+				{ title: "ِDesign for all", text: "    I collaborated closely with the medical team to gather insights and ensure the design was accessible to a wide range of users. Through user research and minimal design tailored to the target age group, the app aimed to support patient education while improving workflow efficiency for healthcare staff and the associated referral center." },
+				{ title: "A Specialized App", text: "Although the platform was designed with a mobile-first approach, I also crafted a web version with equal clarity and usability to support wider accessibility. With a forward-looking vision, I structured the product as a scalable knowledge base platform to serve future needs and growth." }
+			];
+		let currentIndex = 0;
 
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
+			function showImageWithSlide(index, direction = "right") {
+				const imageElement = document.getElementById("galleryImage");
+				const descriptionBox = document.querySelector(".doc-description");
 
-        function previousImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
+				const slideClass = direction === "right" ? "slide-in-right" : "slide-in-left";
 
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "ArrowRight") nextImage();
-            else if (event.key === "ArrowLeft") previousImage();
-        });
+				imageElement.classList.remove("slide-in-left", "slide-in-right");
 
-        let touchStartX = 0;
-        let touchEndX = 0;
-        document.addEventListener('touchstart', function(event) {
-            touchStartX = event.changedTouches[0].screenX;
-        }, false);
-        document.addEventListener('touchend', function(event) {
-            touchEndX = event.changedTouches[0].screenX;
-            handleSwipeGesture();
-        }, false);
+				setTimeout(() => {
+					imageElement.src = images[index];
+					imageElement.classList.add(slideClass);
 
-        function handleSwipeGesture() {
-            if (touchEndX < touchStartX - 50) nextImage();
-            else if (touchEndX > touchStartX + 50) previousImage();
-        }
-    </script>
+					// بروزرسانی توضیحات مربوط به هر اسلاید
+					descriptionBox.innerHTML = `
+						<h2>${descriptions[index].title}</h2>
+						<p>${descriptions[index].text}</p>
+					`;
+				}, 50);
+			}
+
+
+		function nextImage() {
+			currentIndex = (currentIndex + 1) % images.length;
+			showImageWithSlide(currentIndex, "right");
+		}
+
+		function previousImage() {
+			currentIndex = (currentIndex - 1 + images.length) % images.length;
+			showImageWithSlide(currentIndex, "left");
+		}
+
+		document.addEventListener("keydown", function(event) {
+			if (event.key === "ArrowRight") nextImage();
+			else if (event.key === "ArrowLeft") previousImage();
+		});
+
+		let touchStartX = 0;
+		let touchEndX = 0;
+		document.addEventListener('touchstart', function(event) {
+			touchStartX = event.changedTouches[0].screenX;
+		}, false);
+		document.addEventListener('touchend', function(event) {
+			touchEndX = event.changedTouches[0].screenX;
+			handleSwipeGesture();
+		}, false);
+
+		function handleSwipeGesture() {
+			if (touchEndX < touchStartX - 50) nextImage();
+			else if (touchEndX > touchStartX + 50) previousImage();
+		}
+	</script>
 </body>
 </html>
