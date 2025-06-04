@@ -249,36 +249,29 @@
 			];
 		let currentIndex = 0;
 
-			function showImageWithSlide(index, direction = "right") {
+			function showImage(index) {
 				const imageElement = document.getElementById("galleryImage");
 				const descriptionBox = document.querySelector(".doc-description");
 
-				const slideClass = direction === "right" ? "slide-in-right" : "slide-in-left";
+				imageElement.src = images[index];
 
-				imageElement.classList.remove("slide-in-left", "slide-in-right");
-
-				setTimeout(() => {
-					imageElement.src = images[index];
-					imageElement.classList.add(slideClass);
-
-					// بروزرسانی توضیحات مربوط به هر اسلاید
-					descriptionBox.innerHTML = `
-						<h2>${descriptions[index].title}</h2>
-						<p>${descriptions[index].text}</p>
-					`;
-				}, 50);
+				// بروزرسانی توضیحات
+				descriptionBox.innerHTML = `
+					<h2>${descriptions[index].title}</h2>
+					<p>${descriptions[index].text}</p>
+				`;
 			}
 
 
-		function nextImage() {
-			currentIndex = (currentIndex + 1) % images.length;
-			showImageWithSlide(currentIndex, "right");
-		}
+			function nextImage() {
+				currentIndex = (currentIndex + 1) % images.length;
+				showImage(currentIndex);
+			}
 
-		function previousImage() {
-			currentIndex = (currentIndex - 1 + images.length) % images.length;
-			showImageWithSlide(currentIndex, "left");
-		}
+			function previousImage() {
+				currentIndex = (currentIndex - 1 + images.length) % images.length;
+				showImage(currentIndex);
+			}
 
 		document.addEventListener("keydown", function(event) {
 			if (event.key === "ArrowRight") nextImage();

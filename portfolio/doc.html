@@ -91,6 +91,7 @@
 			from { opacity: 0; }
 			to { opacity: 1; }
 		}
+
 		.slide-in-left {
 			animation: slideInLeft 0.4s ease-in;
 		}
@@ -251,36 +252,29 @@
 
 		let currentIndex = 0;
 
-			function showImageWithSlide(index, direction = "right") {
+			function showImage(index) {
 				const imageElement = document.getElementById("galleryImage");
 				const descriptionBox = document.querySelector(".doc-description");
 
-				const slideClass = direction === "right" ? "slide-in-right" : "slide-in-left";
+				imageElement.src = images[index];
 
-				imageElement.classList.remove("slide-in-left", "slide-in-right");
+				// بروزرسانی توضیحات
+				descriptionBox.innerHTML = `
+					<h2>${descriptions[index].title}</h2>
+					<p>${descriptions[index].text}</p>
+				`;
+			}
+					function nextImage() {
+				currentIndex = (currentIndex + 1) % images.length;
+				showImage(currentIndex);
+			}
 
-				setTimeout(() => {
-					imageElement.src = images[index];
-					imageElement.classList.add(slideClass);
-
-					// بروزرسانی توضیحات مربوط به هر اسلاید
-					descriptionBox.innerHTML = `
-						<h2>${descriptions[index].title}</h2>
-						<p>${descriptions[index].text}</p>
-					`;
-				}, 50);
+			function previousImage() {
+				currentIndex = (currentIndex - 1 + images.length) % images.length;
+				showImage(currentIndex);
 			}
 
 
-		function nextImage() {
-			currentIndex = (currentIndex + 1) % images.length;
-			showImageWithSlide(currentIndex, "right");
-		}
-
-		function previousImage() {
-			currentIndex = (currentIndex - 1 + images.length) % images.length;
-			showImageWithSlide(currentIndex, "left");
-		}
 
 		document.addEventListener("keydown", function(event) {
 			if (event.key === "ArrowRight") nextImage();
