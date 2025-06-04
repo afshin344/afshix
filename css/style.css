@@ -575,9 +575,7 @@
     }
 }
 
-<link href="css/style.css?v=1.1" rel="stylesheet">
-
-@@media (max-width: 991px) {
+@media (max-width: 991px) {
     /* اطمینان از اینکه منو چپ‌چین شود */
     .navbar-collapse {
         text-align: left !important;
@@ -768,7 +766,7 @@ html {
     }
 }
 
-
+z
 
 
 
