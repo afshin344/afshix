@@ -689,9 +689,9 @@ html {
     color: #015FC9; /* رنگ دلخواه */
 }
 .logo-image {
-    max-width: 40px; /* حداکثر عرض لوگو */
+    max-width: 90px; /* حداکثر عرض لوگو */
     height: auto; /* ارتفاع متناسب با عرض */
-    margin-right: 10px; /* فاصله بین لوگو و متن */
+    margin-right: 30px; /* فاصله بین لوگو و متن */
 }
 
 .button-container {
@@ -713,9 +713,9 @@ html {
 }
 
 .logo-image {
-    max-width: 40px; /* تنظیم عرض لوگو */
+    max-width: 90px; /* تنظیم عرض لوگو */
     height: auto;
-    margin-right: 20px; /* فاصله بین لوگو و متن */
+    margin-right: 30px; /* فاصله بین لوگو و متن */
 	transform: translateY(-15px); /* حرکت لوگو به بالا */
 
 }
