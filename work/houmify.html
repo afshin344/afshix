@@ -48,7 +48,7 @@
     <div class="container">
       <a href="../index.html#work" class="cs-back">← All work</a>
       <div class="spec-label" style="margin-bottom:20px;">case study 03 / 03 · real estate · marketplace</div>
-      <h1>Connecting renters with agents, inside an existing design system</h1>
+      <h1>A real-estate platform that stopped acting like a social network</h1>
 
       <!-- BRAND & LINK CONTAINER -->
       <div class="brand-link-header">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <p class="role">Houmify needed a digital solution that helped customers find real‑estate agents and connect with property owners — a competitive marketplace built on top of a platform whose core design was already in place.</p>
+      <p class="role">Houmify connected two sides of a real-estate transaction, agents and specialists on one side, buyers, sellers, and renters on the other, in a market where the client typically pays a significant fee to whoever they choose. The platform had been built with a social-networking mindset: put people in front of each other and let them connect. That missed what actually mattered to a client paying that fee. finding the right agent, not just any agent.</p>
 
       <div class="cs-meta-grid">
         <div><div class="k">Role</div><div class="v">UX/UI Designer</div></div>
@@ -72,7 +72,7 @@
 
   <section class="process-stepper-wrap">
     <div class="container">
-      <div class="spec-label">process coverage — every standard stage, followed end to end</div>
+      <div class="spec-label" style="margin-bottom:24px;"> process coverage — every standard stage, followed end to end </div>
       <div class="process-stepper">
         <div class="step done"><span class="dot"></span><span class="label">Discovery</span></div>
         <div class="step done"><span class="dot"></span><span class="label">Research</span></div>
@@ -89,9 +89,9 @@
   <section class="cs-section">
     <div class="container">
       <div class="spec-label cs-section-label warm">the problem</div>
-      <h2 class="marquee">Designing within someone else's system, not from a blank canvas</h2>
+      <h2 class="marquee">Proximity and ad spend aren't the same as quality</h2>
       <div class="cs-body">
-        <p>Unlike a greenfield project, Houmify's core visual system already existed — so the job wasn't "design a real‑estate marketplace," it was "improve the flows and add new capability without breaking what the platform already established." That's a different, more constrained kind of design problem: every decision had to align with existing patterns before it could improve on them.</p>
+        <p>In the traditional model, a client picks an agent based on whichever ad they saw nearby, with no visibility into that agent's track record, pricing, or whether a better match existed a few streets over. Agents, in turn, had to spend their time and budget competing for visibility instead of competing on the value they could actually offer. Houmify's first version tried to solve this by making agents and clients simply reachable to each other, a social-platform pattern that never addressed the actual mismatch between what a client needed and which agent could deliver it.</p>
       </div>
     </div>
   </section>
@@ -99,21 +99,26 @@
   <section class="cs-section section-alt">
     <div class="container">
       <div class="spec-label cs-section-label">process</div>
-      <h2 class="marquee">Redesigning flows while respecting the existing system</h2>
+      <h2 class="marquee">Building a market instead of a contact list</h2>
       <div class="cs-body">
-        <p>I audited the existing user flows for finding agents and listings, identified where users were dropping off or getting confused, and redesigned those specific paths while keeping visual and interaction consistency with the rest of the platform. I also developed a prototype that accounted for real backend and database constraints — so what shipped wasn't just visually correct but technically buildable from day one.</p>
+        <p>Real estate agents, realtors, brokers, buyer and seller agents, mortgage loan officers, mortgage brokers, and consultants all served overlapping but distinct needs, and a client rarely knew which type they actually needed. I researched regional real-estate practices, laws, and customs, and worked closely with clients and a founder already established in the industry to define which parameters mattered for a match: transaction type, specialization, service area, language, and price range.
+Instead of open access between users, I redesigned the core mechanic around eligibility and competition: an agent could reach a client only if their profile matched that client's specific case, and multiple eligible agents could then compete for the same client, including on price.</p>
       </div>
       <div class="cs-columns">
         <div class="artifact-slot">
           <div class="in">
-            <span class="tag-pending">artifact pending</span>
-            existing vs. redesigned flow comparison
+            <a href="../Calc.png" target="_blank">
+            <img src="../Calc.png" alt="Calculator / CTA / How it works?">
+			</a>
+           Calculator / CTA / How it works?
           </div>
         </div>
         <div class="artifact-slot">
           <div class="in">
-            <span class="tag-pending">artifact pending</span>
-            prototype (backend‑aware)
+            <a href="../Persochart.png" target="_blank">
+            <img src="../Persochart.png" alt="User Personas / Sitemap / User Flow">
+			</a>
+            User Personas / Sitemap / User Flow 
           </div>
         </div>
       </div>
@@ -126,12 +131,16 @@
       <h2 class="marquee">Where the trade‑offs actually happened</h2>
       <div class="decision-list">
         <div class="decision-item">
-          <div class="q">decision — extend the system, don't replace it</div>
-          <p>Rather than proposing a visual overhaul, I worked within Houmify's existing component patterns — the faster, lower‑risk path for a live marketplace, and the one that let engineering ship incrementally instead of a disruptive relaunch.</p>
+          <div class="q">Matching over open access:</div>
+          <p> Replacing free-form connection with parameter-based eligibility turned the platform into an actual market, where an agent's access to a client depended on fit, not just presence.</p>
         </div>
         <div class="decision-item">
-          <div class="q">decision — an AI assistant as a shortcut, not a replacement</div>
-          <p>The AI listings assistant was scoped to help users find relevant listings faster — a layer on top of the existing search and browse flows, not a replacement for the marketplace's core discovery mechanics that agents and owners already relied on.</p>
+          <div class="q">AI as the primary path, not a support feature:</div>
+          <p> In phase two, the AI assistant became the main way less experienced users reached a match — a short conversation replaced the need to understand </p>
+        </div>
+		 <div class="decision-item">
+          <div class="q">Financial tools as retention, not onboarding:</div>
+          <p> Loan and fee calculators, plus ongoing state-level legal and tax updates, were built to keep users engaged through the full length of a transaction, not just at signup.</p>
         </div>
       </div>
     </div>
@@ -140,14 +149,16 @@
   <section class="cs-section section-alt">
     <div class="container">
       <div class="spec-label cs-section-label">the solution</div>
-      <h2 class="marquee">Improved flows, plus an AI shortcut to the right listing</h2>
+      <h2 class="marquee">A matching market, with an AI shortcut for the parts people don't understand</h2>
       <div class="cs-body">
-        <p>The delivered redesign kept Houmify's platform identity intact while closing the specific friction points in agent discovery and listing search — with an AI assistant layered in to help users cut through the marketplace faster.</p>
+        <p>The shipped platform matched clients to eligible agents based on transaction type, specialization, location, and language, and let qualified agents compete for the same client, including on discount. Users unfamiliar with real-estate processes could skip the category and filter logic entirely by talking to the AI assistant, which interpreted their situation and routed them directly to a matching agent. Loan cost calculators and state-specific legal and tax updates kept the platform useful well past the initial match.</p>
       </div>
       <div class="artifact-slot">
         <div class="in">
-          <span class="tag-pending">artifact pending</span>
-          final UI screens / prototype link
+          <a href="../Homland.png" target="_blank">
+            <img src="../Homland.png" alt=" AI Assistant / Search / Agent Finder">
+			</a>
+            AI Assistant / Search / Agent Finder
         </div>
       </div>
     </div>
@@ -159,16 +170,16 @@
       <h2 class="marquee">What the redesign delivered</h2>
       <div class="outcome-stats">
         <div class="stat">
-          <div class="num">↑</div>
-          <div class="label">improved agent &amp; listing discovery flow</div>
+          <div class="num">Match, not reach</div>
+          <div class="label">Clients could access better-priced, better-reviewed agents outside their immediate neighborhood instead of settling for whoever advertised nearby</div>
         </div>
         <div class="stat">
-          <div class="num">0</div>
-          <div class="label">breaking changes to the existing design system</div>
+          <div class="num">AI-first onboarding</div>
+          <div class="label">The assistant became the primary entry point for clients unfamiliar with real-estate terminology or agent categories</div>
         </div>
         <div class="stat">
-          <div class="num">AI</div>
-          <div class="label">listings assistant shipped alongside redesign</div>
+          <div class="num">Full-cycle engagement</div>
+          <div class="label">Legal, tax, and financing tools kept users active on the platform throughout a transaction, not just at the first match</div>
         </div>
       </div>
     </div>
@@ -177,9 +188,9 @@
   <section class="cs-section">
     <div class="container">
       <div class="spec-label cs-section-label">reflection</div>
-      <h2 class="marquee">What I'd revisit</h2>
+      <h2 class="marquee">What's worth a second look</h2>
       <div class="cs-body">
-        <p>Staying inside the existing design system was the right call for shipping speed, but a couple of legacy patterns I chose not to touch are probably due for a proper rework rather than another workaround — that's a conversation for a future phase, not this one.</p>
+        <p>Redesigning the core mechanic from open access to competitive matching solved the main problem, but that same competitive layer adds pressure I didn't fully resolve, agents optimizing for discount to win a match can end up competing on price alone, which isn't always the same as the best outcome for the client.</p>
       </div>
     </div>
   </section>
