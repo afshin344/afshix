@@ -48,7 +48,7 @@
     <div class="container">
       <a href="../index.html#work" class="cs-back">← All work</a>
       <div class="spec-label" style="margin-bottom:20px;">case study 01 / 03 · healthcare</div>
-      <h1>Turning prostate‑cancer research into a patient‑facing MVP</h1>
+      <h1>Helping patients find out which conversation they're actually having</h1>
 
       <!-- BRAND & LINK CONTAINER -->
       <div class="brand-link-header">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <p class="role">An academic research project supervised by urologic oncology specialists at the University of Miami's Miller School of Medicine — built to raise patient awareness and give clinic staff better field‑level insight into user behavior.</p>
+      <p class="role">ProGuide was built with a team of urologic oncology specialists at the University of Miami's Miller School of Medicine, for a clinic treating prostate cancer patients. The team faced a recurring problem: patients arrived without knowing which of three very different situations they were in — and every clarifying conversation ate into time the clinic needed for actual care.</p>
 
       <div class="cs-meta-grid">
         <div><div class="k">Role</div><div class="v">Product Designer</div></div>
@@ -72,7 +72,7 @@
 
   <section class="process-stepper-wrap">
     <div class="container">
-      <div class="spec-label">process coverage — every standard stage, followed end to end</div>
+      <div class="spec-label" style="margin-bottom:24px;"> process coverage — every standard stage, followed end to end </div>
       <div class="process-stepper">
         <div class="step done"><span class="dot"></span><span class="label">Discovery</span></div>
         <div class="step done"><span class="dot"></span><span class="label">Research</span></div>
@@ -89,10 +89,10 @@
   <section class="cs-section">
     <div class="container">
       <div class="spec-label cs-section-label warm">the problem</div>
-      <h2 class="marquee">Patients arrive at a diagnosis with almost no usable information — and clinics don't have time to fill the gap.</h2>
+      <h2 class="marquee">Three different patients, one waiting room, no way to tell them apart</h2>
       <div class="cs-body">
-        <p>Prostate cancer is one of the most common cancers affecting men, yet most patients enter the screening or treatment conversation without a real understanding of their options. The research team wanted a tool patients could use in the waiting room, before a biopsy, or after a diagnosis — something that made a dense, clinical topic navigable without oversimplifying it.</p>
-        <p>The constraint that shaped everything: this had to be trustworthy enough for a medical institution to put its name on, and simple enough for a patient with zero clinical background to use under stress.</p>
+        <p>Patients reaching the clinic fell into three distinct groups: people who'd noticed early symptoms outside of any medical setting and were wondering "do I have cancer," people referred by their own doctor for specialist screening, and people already diagnosed and in active treatment. Each group needed different information, but nothing separated them before they sat down with a specialist.</p>
+        <p>That mismatch had a direct cost: doctors spent a large part of every day answering the same general and specific questions instead of screening and treating patients — time that a knowledge resource could recover, if patients could self-identify their situation without another round of clinic visits.</p>
       </div>
     </div>
   </section>
@@ -100,22 +100,26 @@
   <section class="cs-section section-alt">
     <div class="container">
       <div class="spec-label cs-section-label">process</div>
-      <h2 class="marquee">Reviewing patient and physician scenarios before touching UI</h2>
+      <h2 class="marquee">A wizard that had to work in one touch, not three</h2>
       <div class="cs-body">
-        <p>I worked from real patient and physician scenarios provided by the clinical team to map where people actually get stuck — not where a generic health app assumes they get stuck. That meant separating two very different needs: a patient trying to understand a new diagnosis, and a physician who needed the tool to reinforce (not replace) the conversation happening in the room.</p>
-        <p>From there I built the information architecture around personalized, categorized health information — risk factors, screening guidance, treatment options — so each user only sees what's relevant to where they are in the journey, rather than a static wall of medical content.</p>
+        <p>The first version of the platform asked new visitors three short questions to route them into the right group and hand them a relevant list of articles. Usability testing showed this was one step too many: someone arriving anxious about their own health has very little patience for a multi-step intake before getting anything useful. I collapsed the triage down to a single tap, prioritizing a near-zero error rate over asking more clarifying questions.</p>
+        <p>Beyond the triage itself, the library was built as a proper self-serve knowledge base rather than a static brochure — with search, filtering, and content categorization so a patient could find what they needed without going through the wizard again on a return visit. Search history and saved articles persisted even without an account, so someone researching a diagnosis over several weeks could pick up where they left off (no private health data).</p>
       </div>
       <div class="cs-columns">
         <div class="artifact-slot">
-          <div class="in">
-            <span class="tag-pending">artifact pending</span>
-            patient &amp; physician journey map
+           <div class="in">
+		   <a href="../KIT.png" target="_blank">
+            <img src="../KIT.png" alt="Timesheet & UIKIT">
+			</a>
+            Timesheet / Ui Kit / Style Guide
           </div>
-        </div>
+        </div> 
         <div class="artifact-slot">
           <div class="in">
-            <span class="tag-pending">artifact pending</span>
-            information architecture / sitemap
+		    <a href="../FLOW.png" target="_blank">
+            <img src="../FLOW.png" alt="Patient Journey Map">
+			</a>
+            User FLow / Mind Map
           </div>
         </div>
       </div>
@@ -128,16 +132,16 @@
       <h2 class="marquee">Where the trade‑offs actually happened</h2>
       <div class="decision-list">
         <div class="decision-item">
-          <div class="q">decision — personalization vs. simplicity</div>
-          <p>Risk calculators and screening‑eligibility quizzes tailor content to the individual's health profile, but every extra question risks losing an anxious user. I scoped personalization to the handful of inputs (age, family history, symptoms) that meaningfully change the guidance shown, rather than modeling the full clinical picture.</p>
+          <div class="q">decision — one tap, not three questions:</div>
+          <p>Post-testing, I cut the intake wizard from a 3-question flow to a single interaction, trading a slightly coarser first categorization for a much lower drop-off risk with an already-anxious user.</p>
         </div>
         <div class="decision-item">
-          <div class="q">decision — returning‑user continuity</div>
-          <p>Spacer / Return capability built into standard profiles. Patients often research a diagnosis over weeks, not one sitting. The app remembers where a registered user left off, so a return visit picks up the thread instead of restarting a stressful research process from zero.</p>
+          <div class="q">decision — AI assistant designed, not shipped:</div>
+          <p>The AI assistant was fully designed to answer patient-specific questions from symptoms or test results, but launch was held back by the hospital's authorization and regulatory requirements around AI-generated medical guidance. It stayed a validated concept the clinical team could revisit rather than a rushed release.</p>
         </div>
         <div class="decision-item">
-          <div class="q">decision — bilingual from day one</div>
-          <p>Given the equity goal of the research team, English and Spanish were built in from the start rather than bolted on — which shaped how content modules were structured so translation didn't break layout or meaning.</p>
+          <div class="q">decision — bilingual from day one:</div>
+          <p>Given the equity goals of the research team, English and Spanish were built into the content structure from the start, not added later.</p>
         </div>
       </div>
     </div>
@@ -146,13 +150,13 @@
   <section class="cs-section section-alt">
     <div class="container">
       <div class="spec-label cs-section-label">the solution</div>
-      <h2 class="marquee">A guided, categorized information tool — not a static brochure</h2>
+      <h2 class="marquee">A self-serve knowledge base, not a stack of brochures</h2>
       <div class="cs-body">
-        <p>Working closely with the development team, I ensured accurate implementation of the UI and user flows across the core processes: understanding risk, preparing for screening, and exploring treatment options if diagnosed. The result is a tool patients can use anytime — including while waiting in a clinic — to arrive at their appointment with more focused, specific questions.</p>
+        <p>The shipped product combined a one-tap triage with a searchable, filterable knowledge base of short-form articles and short videos, organized by patient group and topic. Multimedia content, photos, diagrams, short explainer videos, did the work that plain text couldn't for patients under stress, making dense medical topics easier to absorb without oversimplifying them. Search, filtering, and category browsing let patients revisit or explore beyond their initial triage result, and saved history worked even without creating an account, so returning users didn't lose their place. The AI assistant remains designed and ready, pending institutional approval.</p>
       </div>
       <div class="artifact-slot">
         <div class="in">
-          <span class="tag-pending">artifact pending</span>
+          <img src="../Landing.png" alt="Final UI">
           final UI screens / prototype link
         </div>
       </div>
@@ -166,15 +170,15 @@
       <div class="outcome-stats">
         <div class="stat">
           <div class="num">+50%</div>
-          <div class="label">projected increase in patient awareness</div>
+          <div class="label">-50% drop in incorrect answers to core screening/diagnosis questions, measured via matched pre‑ and post‑launch patient questionnaires</div>
         </div>
         <div class="stat">
           <div class="num">+25%</div>
-          <div class="label">projected improvement in clinic visit efficiency</div>
+          <div class="label">+25% improvement in staff efficiency for clinic personnel directly handling this patient group, based on KPI tracking over comparable periods</div>
         </div>
         <div class="stat">
-          <div class="num">2</div>
-          <div class="label">languages supported at launch (EN / ES)</div>
+          <div class="num">Awareness</div>
+          <div class="label">Using this tool increases patient knowledge based on a reliable scientific reference</div>
         </div>
       </div>
     </div>
@@ -183,9 +187,10 @@
   <section class="cs-section">
     <div class="container">
       <div class="spec-label cs-section-label">reflection</div>
-      <h2 class="marquee">What I'd revisit</h2>
+      <h2 class="marquee">Details worth remembering</h2>
       <div class="cs-body">
-        <p>The personalization inputs (age, family history, symptoms) were scoped deliberately narrow to protect simplicity — but as the platform gathers real usage data, some of that risk‑calculator logic likely needs to get smarter without adding steps to the flow. That's the next trade‑off to test, not something I'd call solved.</p>
+        <p>Color choices leaned toward calm, muted tones that matched the clinic's physical environment rather than a typical consumer health-app palette, since patients were often reading this content in a waiting room or right after a difficult conversation. Early structure came out of a mind map that categorized every possible question each of the three patient groups was likely to ask, which is what first exposed how much overlap there was between groups, a big part of why the triage logic ended up simpler than the first draft.
+Visual design carried that same restraint: minimal color palette, generous spacing, and clear typographic hierarchy so dense medical information stayed easy to scan. Usability testing was run with a small group matching the primary persona, men over 40, walking through both the 3-question and 1-tap versions of the triage, which is what surfaced the drop-off risk and led to cutting it down. At handoff, UI specs and flows were reviewed against the dev team's implementation to keep the shipped product aligned with the design.</p>
       </div>
     </div>
   </section>
