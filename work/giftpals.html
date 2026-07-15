@@ -48,7 +48,7 @@
     <div class="container">
       <a href="../index.html#work" class="cs-back">← All work</a>
       <div class="spec-label" style="margin-bottom:20px;">case study 02 / 03 · saas · b2c</div>
-      <h1>A personalized gift‑discovery platform, built for an affiliate model</h1>
+      <h1>From a generic catalog to a gift finder that actually knows who it's shopping for</h1>
       
       <!-- BRAND & LINK CONTAINER -->
       <div class="brand-link-header">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <p class="role">Giftpals launched as a SaaS gift‑discovery website based on the founder's market insight: people don't want to browse a catalog, they want to be handed a short, relevant list for a specific person and occasion.</p>
+      <p class="role">Giftpals launched on a strong market insight — people don't want to browse a catalog, they want a short, relevant list for a specific person and occasion — but the first version still behaved like a standard online store. I rebuilt discovery around the recipient instead of the product category, turning that insight into something the product actually delivered on.</p>
 
       <div class="cs-meta-grid">
         <div><div class="k">Role</div><div class="v">UX/UI Designer</div></div>
@@ -72,7 +72,7 @@
 
   <section class="process-stepper-wrap">
     <div class="container">
-      <div class="spec-label">process coverage — every standard stage, followed end to end</div>
+      <div class="spec-label" style="margin-bottom:24px;"> process coverage — every standard stage, followed end to end </div>
       <div class="process-stepper">
         <div class="step done"><span class="dot"></span><span class="label">Discovery</span></div>
         <div class="step done"><span class="dot"></span><span class="label">Research</span></div>
@@ -89,9 +89,19 @@
   <section class="cs-section">
     <div class="container">
       <div class="spec-label cs-section-label warm">the problem</div>
-      <h2 class="marquee">Too many gifting filters, not enough of a shortcut</h2>
+      <h2 class="marquee">A catalog that didn't know who the gift was for</h2>
       <div class="cs-body">
-        <p>The core challenge was building tools and flows that helped a user land on a personalized gift idea fast — filtered by parameters like the recipient's profession, gender, age group, and interests — without turning the experience into a generic e‑commerce filter panel. The business model added a second constraint: the interface needed to support affiliate‑driven monetization without feeling like an ad‑stuffed catalog.</p>
+        <p><p>
+Before I joined the team, the platform worked like a standard online store: products organized into generic categories, no different from any e-commerce catalog. That approach missed the actual problem — the user's struggle wasn't a lack of products, it was finding the right gift for a specific person among too many options.
+</p>
+
+<ul>
+    <li>Users had little structured information about the person they were shopping for, and what information they did have wasn't used to narrow anything down.</li>
+
+    <li>Search, filtering, and sorting ran on generic product categories instead of who the gift was actually for.</li>
+
+    <li>The business model added a second constraint: the interface needed to support affiliate-driven monetization without feeling like an ad-stuffed catalog.</li>
+</ul></p>
       </div>
     </div>
   </section>
@@ -101,19 +111,23 @@
       <div class="spec-label cs-section-label">process</div>
       <h2 class="marquee">Borrowing mental models people already trust</h2>
       <div class="cs-body">
-        <p>Rather than inventing a new interaction pattern, I leaned on UX patterns users already understand from social platforms and retail — recognizable filtering, shareable lists, discovery feeds — so the "personalized gift finder" concept didn't need to be explained before it could be used.</p>
-        <p>I built the user flows and workflow diagrams for discovery by recipient (profession, age, interests) and by occasion, then presented progress and prototypes directly to the founder and stakeholders to keep design decisions aligned with the business goals driving the roadmap.</p>
+        <p>Rather than inventing a new interaction pattern, I leaned on UX patterns users already understand from social platforms and retail, recognizable filtering, shareable lists, discovery feeds, so the "personalized gift finder" concept didn't need to be explained before it could be used.</p>
+        <p>I rebuilt search, filtering, and sorting around recipient-based parameters, age, gender, profession, personal interests, and budget, instead of generic product categories, so the first results a user saw were already close to a match. I built the user flows and workflow diagrams for discovery by recipient and by occasion, then presented progress and prototypes directly to the founder and stakeholders to keep design decisions aligned with the business goals driving the roadmap.</p>
       </div>
       <div class="cs-columns">
         <div class="artifact-slot">
           <div class="in">
-            <span class="tag-pending">artifact pending</span>
+            <a href="../Method.png" target="_blank">
+            <img src="../Method.png" alt="Timesheet & UIKIT">
+			</a>
             gift‑discovery user flow
           </div>
         </div>
         <div class="artifact-slot">
           <div class="in">
-            <span class="tag-pending">artifact pending</span>
+            <a href="../Wire.png" target="_blank">
+            <img src="../Wire.png" alt="Timesheet & UIKIT">
+			</a>
             workflow diagram / sitemap
           </div>
         </div>
@@ -127,12 +141,12 @@
       <h2 class="marquee">Where the trade‑offs actually happened</h2>
       <div class="decision-list">
         <div class="decision-item">
-          <div class="q">decision — social patterns over retail patterns</div>
-          <p>Combining engaging interface design with UX patterns common on social platforms — sharing, following, list‑building — encouraged community‑driven content and repeat visits, instead of a one‑off transactional filter search.</p>
+          <div class="q">decision, recipient parameters over product categories:</div>
+          <p>Rebuilding search and filtering around who the gift was for, rather than what category the product belonged to, was the core fix, it addressed the actual source of user confusion instead of adding more filters on top of the wrong structure.</p>
         </div>
         <div class="decision-item">
-          <div class="q">decision — usability audit before scaling features</div>
-          <p>Rather than continuing to add discovery filters, I ran a usability audit on the existing flow first. The redesign that followed reduced usability testing errors by 20% — evidence that the fix was in flow clarity, not feature count.</p>
+          <div class="q">decision, social patterns over retail patterns:</div>
+          <p>Combining engaging interface design with UX patterns common on social platforms, sharing, following, list-building, encouraged community-driven content and repeat visits, instead of a one-off transactional filter search.</p>
         </div>
       </div>
     </div>
@@ -143,11 +157,31 @@
       <div class="spec-label cs-section-label">the solution</div>
       <h2 class="marquee">Discovery that feels like browsing, not filtering</h2>
       <div class="cs-body">
-        <p>The final experience lets users discover and share gift ideas in a way that mirrors browsing a social feed more than querying a database — while every result still routes through the affiliate model funding the business.</p>
+        <p><p>
+The final experience lets users discover and share gift ideas in a way that mirrors browsing a social feed more than querying a database, built around a set of features that turned one-off shopping into an ongoing platform:
+</p>
+
+<ul>
+    <li>A built-in messenger and social layer, where users could share upcoming occasions, interests, and needs so friends could shop for them with actual context, not guesswork.</li>
+
+    <li>Group gifting for occasions like Secret Santa, plus support for corporate gifting for company events.</li>
+
+    <li>An occasion calendar with reminders, so users didn't miss—or duplicate—a gift for the same person.</li>
+
+    <li>Followable brands and shareable gift lists, visible to friends with the user's approval.</li>
+
+    <li>A full dashboard covering store performance, friend lists, income progress, and a user's own saved gift preferences.</li>
+
+    <li>Search and filtering designed to feel closer to a fun scroll than a checkbox form, so narrowing down options didn't feel like work.</li>
+</ul>
+
+<p>
+Every result still routes through the affiliate model funding the business.
+</p></p>
       </div>
       <div class="artifact-slot">
         <div class="in">
-          <span class="tag-pending">artifact pending</span>
+          <img src="../Giftland.png" alt="Final UI">
           final UI screens / prototype link
         </div>
       </div>
@@ -161,15 +195,15 @@
       <div class="outcome-stats">
         <div class="stat">
           <div class="num">−20%</div>
-          <div class="label">usability testing errors after redesign</div>
+          <div class="label">+20% increase in click-through and purchase engagement on search results within the first few weeks after the redesign, based on the founder's weekly reporting</div>
         </div>
         <div class="stat">
-          <div class="num">↑</div>
-          <div class="label">user engagement &amp; community‑driven content</div>
+          <div class="num">↑ Growth</div>
+          <div class="label">user engagement and community-driven content like a social media platform</div>
         </div>
         <div class="stat">
-          <div class="num">2 yr</div>
-          <div class="label">ownership from early product to scale</div>
+          <div class="num">2 years</div>
+          <div class="label">2 yr full-time collaboration from early product to scale, continuing part-time as a consultant afterward</div>
         </div>
       </div>
     </div>
@@ -180,7 +214,7 @@
       <div class="spec-label cs-section-label">reflection</div>
       <h2 class="marquee">What I'd revisit</h2>
       <div class="cs-body">
-        <p>Leaning on social‑platform patterns made the concept easy to grasp fast, but it also means the discovery feed competes for the same attention span as the platforms it borrowed from — worth a longer‑term look at whether that's a strength or a ceiling on engagement.</p>
+        <p>Leaning on social‑platform patterns made the concept easy to grasp fast, but it also means the discovery feed competes for the same attention span as the platforms it borrowed from, worth a longer‑term look at whether that's a strength or a ceiling on engagement.</p>
       </div>
     </div>
   </section>
