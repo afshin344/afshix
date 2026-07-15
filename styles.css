@@ -581,3 +581,35 @@ header .logo-wrapper .logo {
   align-items: flex-start !important;
   gap: 12px !important;
 }
+/* اصلاح و بازگرداندن استایل کادر نام کشورها به حالت اولیه */
+.loc-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--f-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: var(--ink-soft) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  width: 110px !important; /* اندازه ثابت برای وسط‌چین ماندن دقیق */
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* تراز کردن ردیف‌های بخش تجربیات برای جلوگیری از چسبیدن به چپ و راست */
+.role-row {
+  display: grid !important;
+  grid-template-columns: 1fr 110px 20px !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* برای ردیف‌هایی که فلش بازشو ندارند، یک فضای خالی فرضی در سمت راست می‌گذاریم تا کشورها تکان نخورند */
+.role-row:not(:has(.expand-arrow)) {
+  grid-template-columns: 1fr 110px 20px !important;
+}
