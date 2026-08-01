@@ -613,3 +613,7 @@ header .logo-wrapper .logo {
 .role-row:not(:has(.expand-arrow)) {
   grid-template-columns: 1fr 110px 20px !important;
 }
+.exp-details a {
+    color: var(--accent);
+    text-decoration: underline;
+}
