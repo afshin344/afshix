@@ -219,8 +219,8 @@ main, header, footer { position: relative; z-index: 2; }
 
 @media (max-width: 640px) {
   .hero { padding: 28px 0 44px; }
-  .hero-eyebrow { margin-bottom: 18px; }
-  .hero h1 { margin-bottom: 16px; }
+  .hero-eyebrow { margin-bottom: 50px; }
+  .hero h1 { margin-bottom: 50px; }
   .hero-sub { font-size: 14.5px !important; margin-bottom: 22px; } /* Slightly smaller for mobile reading ease */
   .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
   .hero-meta .item { padding: 10px 12px; }
