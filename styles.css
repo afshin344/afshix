@@ -617,3 +617,103 @@ header .logo-wrapper .logo {
     color: var(--accent);
     text-decoration: underline;
 }
+/* Soft Pulse/Fade Orange Effect */
+@keyframes orangePulse {
+  0%, 100% {
+    color: #FF8A63; /* رنگ نارنجی پرنور */
+    opacity: 1;
+  }
+  50% {
+    color: #FF8A63;
+    opacity: 0.25;  /* کمرنگ شدن نرم */
+  }
+}
+
+.blink-orange {
+  animation: orangePulse 2s infinite ease-in-out !important;
+  color: #FF8A63 !important;
+}
+/* Blink & Soft Pulse Effect */
+@keyframes orangePulse {
+  0%, 100% {
+    color: #FF8A63;
+    opacity: 1;
+  }
+  50% {
+    color: #FF8A63;
+    opacity: 0.3;
+  }
+}
+
+.blink-orange {
+  animation: orangePulse 2.5s infinite ease-in-out !important;
+  color: #FF8A63 !important;
+}
+
+/* Layout for Text Bullets & Image Inside Expand Content */
+.timeline-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.timeline-bullets-text {
+  flex: 1;
+}
+
+.timeline-bullets-text ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.timeline-bullets-text li {
+  margin-bottom: 8px;
+}
+
+.timeline-bullets-text li:last-child {
+  margin-bottom: 0;
+}
+
+/* Thumbnail Styling */
+.timeline-preview-thumb {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.timeline-preview-thumb a {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-preview-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.timeline-preview-thumb a:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: #FF8A63;
+}
+
+/* Responsive for Mobile & Tablet */
+@media (max-width: 768px) {
+  .timeline-content-wrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .timeline-preview-thumb {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 4px;
+  }
+}
