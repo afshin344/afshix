@@ -99,10 +99,11 @@
   <section class="cs-section section-alt">
     <div class="container">
       <div class="spec-label cs-section-label">process</div>
-      <h2 class="marquee">Building a market instead of a contact list</h2>
+      <h2 class="marquee">Turning access into eligibility, and a conversation into a shortcut</h2>
       <div class="cs-body">
-        <p>Real estate agents, realtors, brokers, buyer and seller agents, mortgage loan officers, mortgage brokers, and consultants all served overlapping but distinct needs, and a client rarely knew which type they actually needed. I researched regional real-estate practices, laws, and customs, and worked closely with clients and a founder already established in the industry to define which parameters mattered for a match: transaction type, specialization, service area, language, and price range.
-Instead of open access between users, I redesigned the core mechanic around eligibility and competition: an agent could reach a client only if their profile matched that client's specific case, and multiple eligible agents could then compete for the same client, including on price.</p>
+        <p>Before landing on the eligibility-and-competition model, the earlier approach was closer to a directory: agents visible to clients, filtered by category. That was the same open-access pattern Houmify had shipped with originally, just with better filters on top, and it didn't fix the actual problem: a client still couldn't tell which agent was the right one for their specific case. Once that was clear, I redesigned the core mechanic so an agent could only reach a client whose case matched their profile, and let multiple eligible agents compete for that client, including on price.</p>
+		<p>In phase two, the AI assistant became the main way less experienced users reached a match, a short conversation replaced the need to understand agent categories, real-estate terminology, and which type of professional actually fit their situation. Most of the real work here happened in the backend, in how the assistant's prompts were built, so it could correctly interpret a user's conversation, feed that back into training the model, and generate the right query against the database to surface a match, rather than just producing a plausible-sounding answer.</p>
+		<p>Loan calculators, fee estimators, and legal and tax updates stayed available from day one alongside the AI path, not gated behind a match. Keeping them free and accessible built trust and a sense of being informed, gamified engagement a little, and meant a user was more likely to explore the platform's other tools once they'd tried one. The AI assistant is still the priority on the landing page, but a user who came in through search already knows something about what they're looking for, and educational content plus calculators for each task are one click away through the site's other pages.</p>
       </div>
       <div class="cs-columns">
         <div class="artifact-slot">
@@ -132,15 +133,19 @@ Instead of open access between users, I redesigned the core mechanic around elig
       <div class="decision-list">
         <div class="decision-item">
           <div class="q">Matching over open access:</div>
-          <p> Replacing free-form connection with parameter-based eligibility turned the platform into an actual market, where an agent's access to a client depended on fit, not just presence.</p>
+          <p>Replacing free-form connection with parameter-based eligibility turned the platform into an actual market, where an agent's access to a client depended on fit, not just presence.</p>
         </div>
         <div class="decision-item">
           <div class="q">AI as the primary path, not a support feature:</div>
-          <p> In phase two, the AI assistant became the main way less experienced users reached a match — a short conversation replaced the need to understand </p>
+          <p>A short conversation replaced the need to understand agent categories, real-estate terminology, and which type of professional actually fit a user's situation. Getting this right depended less on the interface and more on the backend, refining how the assistant's prompts interpreted a conversation, both to keep training the model and to generate the correct query against the database, rather than a confident-sounding guess.</p>
+        </div>
+		<div class="decision-item">
+          <div class="q">Financial tools as trust-building, not gated content:</div>
+          <p>Loan and fee calculators, plus state-level legal and tax updates, stayed free and available from day one instead of being held back until after a match. The trade-off wasn't withholding access, it was accepting that these tools would compete for attention with the AI assistant on a user's first visit; keeping them a click away through the site's other pages, rather than pushing them onto the landing page, protected the AI as the primary path while still letting an already-informed user reach them fast.</p>
         </div>
 		 <div class="decision-item">
-          <div class="q">Financial tools as retention, not onboarding:</div>
-          <p> Loan and fee calculators, plus ongoing state-level legal and tax updates, were built to keep users engaged through the full length of a transaction, not just at signup.</p>
+          <div class="q">Localizing what varies by state:</div>
+          <p>Loan conditions, agent pricing, and client profiles differ from state to state, not just the regulations around them. Surfacing state-specific tools and updates, rather than one generic national version, meant more engineering and content work per region, but users were consistently more satisfied seeing information relevant to exactly where they lived.</p>
         </div>
       </div>
     </div>
