@@ -109,11 +109,12 @@ Before I joined the team, the platform worked like a standard online store: prod
   <section class="cs-section section-alt">
     <div class="container">
       <div class="spec-label cs-section-label">process</div>
-      <h2 class="marquee">Borrowing mental models people already trust</h2>
+      <h2 class="marquee">A wizard we tried and dropped, before borrowing mental models people already trust</h2>
       <div class="cs-body">
-        <p>Rather than inventing a new interaction pattern, I leaned on UX patterns users already understand from social platforms and retail, recognizable filtering, shareable lists, discovery feeds, so the "personalized gift finder" concept didn't need to be explained before it could be used.</p>
+        <p>We tested a wizard first, a step-by-step questionnaire to narrow down the recipient before showing results. Research and interviews against the defined personas showed it would move the needle very little; people didn't want another form to fill out, they wanted the platform to already understand who they were shopping for. The alternative I brought to a brainstorming session, mapping out user pain points and root causes instead of just their answers, is what actually led to the direction we shipped: capture information the way a social platform would, as part of normal use rather than an upfront questionnaire, so the same data both sharpened product recommendations for the user and let someone shopping for them spot a fitting gift without needing a wishlist at all.</p>
+        <p>Rather than inventing a new interaction pattern from there, I leaned on UX patterns users already understand from social platforms and retail, recognizable filtering, shareable lists, discovery feeds, so the "personalized gift finder" concept didn't need to be explained before it could be used. This also served the business model directly: the platform needed to work like a growth channel for shop owners, not just a search tool, and social-style mechanics turned it into something storeowners could grow their business on without upfront investment, which is part of what made the affiliate model viable for smaller sellers.</p>
         <p>I rebuilt search, filtering, and sorting around recipient-based parameters, age, gender, profession, personal interests, and budget, instead of generic product categories, so the first results a user saw were already close to a match. I built the user flows and workflow diagrams for discovery by recipient and by occasion, then presented progress and prototypes directly to the founder and stakeholders to keep design decisions aligned with the business goals driving the roadmap.</p>
-      </div>
+	  </div>
       <div class="cs-columns">
         <div class="artifact-slot">
           <div class="in">
@@ -142,11 +143,19 @@ Before I joined the team, the platform worked like a standard online store: prod
       <div class="decision-list">
         <div class="decision-item">
           <div class="q">Recipient parameters over product categories:</div>
-          <p>Rebuilding search and filtering around who the gift was for, rather than what category the product belonged to, was the core fix, it addressed the actual source of user confusion instead of adding more filters on top of the wrong structure.</p>
+          <p>Rebuilding search and filtering around who the gift was for, rather than what category the product belonged to, was the core fix, it addressed the actual source of user confusion instead of adding more filters on top of the wrong structure. The cost was real for one group: users who already knew exactly what they wanted to buy did better under the old, category-based model. Rather than lose them, I kept that model running alongside the new one for that specific case.</p>
         </div>
         <div class="decision-item">
           <div class="q">Social patterns over retail patterns:</div>
-          <p>Combining engaging interface design with UX patterns common on social platforms, sharing, following, list-building, encouraged community-driven content and repeat visits, instead of a one-off transactional filter search.</p>
+          <p>Combining engaging interface design with UX patterns common on social platforms, sharing, following, list-building, encouraged community-driven content and repeat visits, instead of a one-off transactional filter search. The risk I was watching for was that this could tip too far and turn a targeted-search-and-revenue tool into something that just functioned as entertainment, the common failure mode of social products. Keeping every discovery path routed back through the affiliate model, rather than letting engagement become the end in itself, was how I kept that from happening.</p>
+        </div>
+		<div class="decision-item">
+          <div class="q">A gamified search, proposed but shelved:</div>
+          <p>I designed a slot-machine-style search mechanic to make browsing for a gift feel more playful, an easy add on top of the recipient-based parameters already in place. The founder liked the direction, but the implementation effort and the timeline at that stage didn't line up, so it stayed a validated concept rather than a shipped feature.</p>
+        </div>
+		<div class="decision-item">
+          <div class="q">Deferring to the founder's market read:</div>
+          <p>Not every decision was mine to make on UX grounds alone. Fair prioritization of revenue for shops carrying similar products had to follow parameters the founder set from direct market experience, even where I would have approached it differently. Data access and privacy were also kept stricter than a typical social platform, because of regulations specific to this kind of business. Both were cases where the founder's insight and the company's interests came first, and I designed within those limits rather than around them.</p>
         </div>
       </div>
     </div>
